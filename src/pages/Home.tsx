@@ -2,7 +2,7 @@ import React from 'react';
 import HomeCard from "../components/Cards/HomeCard";
 import RecentEvents from "../components/Sections/RecentEvents";
 import HomeHero from "../components/Sections/HomeHero";
-import aboutUsImg from "../assets/images/about_us_illustration.png";
+import aboutUsImg from "../assets/images/about_us_illustration.jpg";
 
 
 export const Home: React.FC = () => {
