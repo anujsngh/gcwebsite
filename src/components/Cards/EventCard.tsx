@@ -1,5 +1,6 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
+import { getOptimizedEventCardImage, getLQIPUrl } from '../../utils/imagekitUtils';
 
 interface EventCardProps {
     heading?: string;
@@ -23,6 +24,8 @@ const EventCard: React.FC<EventCardProps> = ({
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
     const controls = useAnimation();
+    const [imageLoaded, setImageLoaded] = useState(false);
+    const [showLQIP, setShowLQIP] = useState(true);
 
     useEffect(() => {
         if (isInView) {
@@ -55,12 +58,33 @@ const EventCard: React.FC<EventCardProps> = ({
                 />
             </div>
             {image && (
-                <figure className="lg:w-1/3 h-64 lg:h-auto relative">
+                <figure className="lg:w-1/3 h-64 lg:h-auto relative bg-base-200">
+                    {/* Low Quality Image Placeholder (LQIP) for blur-up effect */}
+                    {showLQIP && (
+                        <img
+                            src={getLQIPUrl(image)}
+                            alt=""
+                            className="absolute inset-0 w-full h-full object-cover blur-sm"
+                            aria-hidden="true"
+                        />
+                    )}
+                    {/* Optimized high-quality image */}
                     <img
-                        src={image}
+                        src={getOptimizedEventCardImage(image)}
                         alt={heading || "Event image"}
-                        className="absolute inset-0 w-full h-full object-cover"
+                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+                            imageLoaded ? 'opacity-100' : 'opacity-0'
+                        }`}
+                        loading="lazy"
+                        onLoad={() => {
+                            setImageLoaded(true);
+                            setTimeout(() => setShowLQIP(false), 500);
+                        }}
                     />
+                    {/* Loading skeleton */}
+                    {!imageLoaded && (
+                        <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-base-200 via-base-300 to-base-200 animate-pulse" />
+                    )}
                 </figure>
             )}
         </motion.div>
