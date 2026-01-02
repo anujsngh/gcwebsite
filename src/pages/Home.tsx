@@ -2,7 +2,7 @@ import React from 'react';
 import HomeCard from "../components/Cards/HomeCard";
 import RecentEvents from "../components/Sections/RecentEvents";
 import HomeHero from "../components/Sections/HomeHero";
-import aboutUsImg from "../assets/images/about_us_illustration.jpg";
+import aboutUsImg from "../assets/images/about_us_illustration.png";
 
 
 export const Home: React.FC = () => {
@@ -58,10 +58,10 @@ We welcome anyone residing, working, or visiting the campus to approach us. Whet
           </div>
 
           <div className="w-[92%] mx-auto text-error my-4 font-medium">
-            <p>All sexual interactions must occur between consenting adults. Understanding and respecting consent is crucial in ensuring that all parties feel safe, respected, and valued. By adhering to these principles, we can create a culture of mutual respect and understanding, where everyone’s boundaries are acknowledged and honored.</p>
+            <p>All sexual interactions must occur between consenting adults. Understanding and respecting consent is crucial in ensuring that all parties feel safe, respected, and valued. By adhering to these principles, we can create a culture of mutual respect and understanding, where everyone's boundaries are acknowledged and honored.</p>
           </div>
 
-          <div className="w-1/2 ml-auto text-right text-sm text-gray-500">
+          <div className="w-[92%] mx-auto text-right text-sm text-gray-500">
             <p className="font-bold">Credits to:</p>
             <p>University Health and Counseling Services, University of Wisconsin Whitewater</p>
           </div>

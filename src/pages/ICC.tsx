@@ -38,7 +38,7 @@ const ICC: React.FC = () => {
                 </p>
 
                 <div id="current-committee" className="mb-12">
-                    <h2 className="text-2xl font-bold mb-6 font-heading text-primary">
+                    <h2 className="text-xl md:text-2xl font-bold mb-6 font-heading text-primary">
                         The Current Committee
                         <span className="text-sm font-normal ml-2 text-base-content/70 block md:inline mt-2 md:mt-0">
                             (Office Orders:
@@ -69,7 +69,7 @@ const ICC: React.FC = () => {
                 </div>
 
                 <div id="who-can" className="mb-12">
-                    <h2 className="text-2xl font-bold mb-6 font-heading text-primary">Who can file a complaint?</h2>
+                    <h2 className="text-xl md:text-2xl font-bold mb-6 font-heading text-primary">Who can file a complaint?</h2>
                     <ul className="list-disc ml-6 space-y-3 text-lg">
                         <li>Any woman employee of IIT Kanpur including faculty and staff as well as any woman residing in the Campus or visiting the Campus in any capacity may file a complaint against an incident of sexual harassment.</li>
                         <li>Any student, irrespective of age and/or gender, may file a complaint against an incident of sexual harassment</li>
@@ -78,7 +78,7 @@ const ICC: React.FC = () => {
                 </div>
 
                 <div id="how-to-file" className="mb-12">
-                    <h2 className="text-2xl font-bold mb-6 font-heading text-primary">How to file a complaint?</h2>
+                    <h2 className="text-xl md:text-2xl font-bold mb-6 font-heading text-primary">How to file a complaint?</h2>
                     <ul className="list-disc ml-6 space-y-3 text-lg">
                         <li>A formal written complaint must be filed (hard copy or email) within 90 days of the incident.</li>
                         <li>The ICC will complete inquiry and submit the report within 90 days of receiving the complaint.</li>
@@ -96,7 +96,7 @@ const ICC: React.FC = () => {
                 </div>
 
                 <div className="bg-base-200 p-8 rounded-xl shadow-md">
-                    <h2 className="text-2xl font-bold mb-4 font-heading text-primary">Where to file a complaint?</h2>
+                    <h2 className="text-xl md:text-2xl font-bold mb-4 font-heading text-primary">Where to file a complaint?</h2>
                     <p className="text-lg">
                         Email the Presiding Officer or any ICC member. For further action, send a formal complaint to:
                         <br />Email: <a className="link link-primary font-bold" href="mailto:icc@iitk.ac.in">icc@iitk.ac.in</a>, <a className="link link-primary font-bold" href="mailto:devlina@iitk.ac.in">devlina@iitk.ac.in</a>

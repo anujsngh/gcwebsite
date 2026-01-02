@@ -103,24 +103,24 @@ const About: React.FC = () => {
                     <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 font-heading text-primary">About Us</h1>
                     <div className="grid md:grid-cols-3 gap-8">
                         <div className="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                            <div className="card-body">
-                                <h2 className="card-title text-2xl font-heading mb-4">Who are we?</h2>
+                            <div className="card-body p-6 md:p-8">
+                                <h2 className="card-title text-xl md:text-2xl font-heading mb-4">Who are we?</h2>
                                 <p className="text-base-content/80 leading-relaxed">
                                     The Gender Cell at IIT Kanpur is committed to creating a safe and supportive environment for everyone on campus. We are committed to treating all people with dignity and respect, and we actively prevent any exploitation, sexual harassment, or abuse.
                                 </p>
                             </div>
                         </div>
                         <div className="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                            <div className="card-body">
-                                <h2 className="card-title text-2xl font-heading mb-4">What do we do?</h2>
+                            <div className="card-body p-6 md:p-8">
+                                <h2 className="card-title text-xl md:text-2xl font-heading mb-4">What do we do?</h2>
                                 <p className="text-base-content/80 leading-relaxed">
                                     The Cell's goals include raising awareness within the community about gender issues and making a safe campus environment. We address the issue of sexual harassment and abuse across campus. We conduct orientation programs, seminars for students and staff, and sensitize residents from all parts of the community.
                                 </p>
                             </div>
                         </div>
                         <div className="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                            <div className="card-body">
-                                <h2 className="card-title text-2xl font-heading mb-4">Who can approach us?</h2>
+                            <div className="card-body p-6 md:p-8">
+                                <h2 className="card-title text-xl md:text-2xl font-heading mb-4">Who can approach us?</h2>
                                 <p className="text-base-content/80 leading-relaxed">
                                     Any person residing, working or visiting the campus as well as any student can approach us and file complaint in any case of sexual harassment. Your all information will be kept completely confidential.
                                 </p>
@@ -135,7 +135,7 @@ const About: React.FC = () => {
                     <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 font-heading">Meet Our Team</h2>
 
                     <div className="mb-16">
-                        <h3 className="text-2xl font-bold text-center mb-8 text-primary font-heading">Chairperson</h3>
+                        <h3 className="text-xl md:text-2xl font-bold text-center mb-8 text-primary font-heading">Chairperson</h3>
                         <div className="flex flex-wrap justify-center gap-8">
                             {head.map((head, index) => (
                                 <ContactCard key={index} name={head.name} designation={head.designation} email={head.email} phone={head.phone} image={head.image} />
@@ -144,7 +144,7 @@ const About: React.FC = () => {
                     </div>
 
                     <div className="mb-16">
-                        <h3 className="text-2xl font-bold text-center mb-8 text-primary font-heading">Faculty Members of Gender Cell</h3>
+                        <h3 className="text-xl md:text-2xl font-bold text-center mb-8 text-primary font-heading">Faculty Members of Gender Cell</h3>
                         <div className="flex flex-wrap justify-center gap-8">
                             {contacts.map((contact, index) => (
                                 <ContactCard
@@ -160,7 +160,7 @@ const About: React.FC = () => {
                     </div>
 
                     <div className="mb-16">
-                        <h3 className="text-2xl font-bold text-center mb-8 text-primary font-heading">Staff Member of Gender Cell</h3>
+                        <h3 className="text-xl md:text-2xl font-bold text-center mb-8 text-primary font-heading">Staff Member of Gender Cell</h3>
                         <div className="flex flex-wrap justify-center gap-8">
                             {staff.map((contact, index) => (
                                 <ContactCard
@@ -176,7 +176,7 @@ const About: React.FC = () => {
                     </div>
 
                     <div className="mb-16">
-                        <h3 className="text-2xl font-bold text-center mb-8 text-primary font-heading">Student Nominee of Gender Cell</h3>
+                        <h3 className="text-xl md:text-2xl font-bold text-center mb-8 text-primary font-heading">Student Nominee of Gender Cell</h3>
                         <div className="flex flex-wrap justify-center gap-8">
                             {nominees.map((nominee, index) => (
                                 <ContactCard
