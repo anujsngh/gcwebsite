@@ -1,10 +1,21 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 // Import images
 import movie1 from '../../assets/images_events/movie3.jpg';
 import open1 from '../../assets/images/open2.jpg';
 
 const RecentEvents: React.FC = () => {
+    const navigate = useNavigate();
+
+    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        e.preventDefault();
+        navigate('/events');
+        setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 100);
+    };
+
     return (
         <div className="bg-base-200 py-16 md:py-20">
             <div className="container mx-auto px-6 max-w-6xl text-neutral">
@@ -38,9 +49,9 @@ const RecentEvents: React.FC = () => {
                 </div>
 
                 <div className="text-center mt-12">
-                    <a href="./events" className="btn btn-primary text-white px-8 rounded-md">
+                    <Link to="/events" onClick={handleClick} className="btn btn-primary text-white px-8 rounded-md">
                         View More Events...
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>

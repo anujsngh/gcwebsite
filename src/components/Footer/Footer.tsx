@@ -1,9 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from "../../assets/images/logo_gc_new.png";
 import logo_dark from "../../assets/images/logo-iitk-dark.png";
 
 export const Footer: React.FC = () => {
+    const navigate = useNavigate();
+
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+        e.preventDefault();
+        navigate(path);
+        setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 100);
+    };
+
     return (
         <div className="bg-neutral text-neutral-content">
             <footer className="footer p-10 max-w-7xl mx-auto">
@@ -24,20 +34,20 @@ export const Footer: React.FC = () => {
                 </aside>
                 <nav>
                     <h6 className="footer-title text-secondary">Quick Links</h6>
-                    <Link className="link link-hover hover:text-secondary transition-colors" to="/">Home</Link>
-                    <Link className="link link-hover hover:text-secondary transition-colors" to="/about">About us</Link>
-                    <Link className="link link-hover hover:text-secondary transition-colors" to="/events">Events</Link>
-                    <Link className="link link-hover hover:text-secondary transition-colors" to="/resources">Resources</Link>
-                    <Link className="link link-hover hover:text-secondary transition-colors" to="/blogs">Blogs</Link>
-                    <Link className="link link-hover hover:text-secondary transition-colors" to="/support">Support Services</Link>
-                    <Link className="link link-hover hover:text-secondary transition-colors" to="/surveys">Surveys</Link>
-                    <Link className="link link-hover hover:text-secondary transition-colors" to="/competitions">Competitions</Link>
+                    <Link className="link link-hover hover:text-secondary transition-colors" to="/" onClick={(e) => handleNavClick(e, "/")}>Home</Link>
+                    <Link className="link link-hover hover:text-secondary transition-colors" to="/about" onClick={(e) => handleNavClick(e, "/about")}>About us</Link>
+                    <Link className="link link-hover hover:text-secondary transition-colors" to="/events" onClick={(e) => handleNavClick(e, "/events")}>Events</Link>
+                    <Link className="link link-hover hover:text-secondary transition-colors" to="/resources" onClick={(e) => handleNavClick(e, "/resources")}>Resources</Link>
+                    <Link className="link link-hover hover:text-secondary transition-colors" to="/blogs" onClick={(e) => handleNavClick(e, "/blogs")}>Blogs</Link>
+                    <Link className="link link-hover hover:text-secondary transition-colors" to="/support" onClick={(e) => handleNavClick(e, "/support")}>Support Services</Link>
+                    <Link className="link link-hover hover:text-secondary transition-colors" to="/surveys" onClick={(e) => handleNavClick(e, "/surveys")}>Surveys</Link>
+                    <Link className="link link-hover hover:text-secondary transition-colors" to="/competitions" onClick={(e) => handleNavClick(e, "/competitions")}>Competitions</Link>
                 </nav>
                 <nav>
                     <h6 className="footer-title text-secondary">IITK's LINK</h6>
                     <a className="link link-hover hover:text-secondary transition-colors" href="https://www.iitk.ac.in/" target="_blank" rel="noopener noreferrer">IITK HOMEPAGE</a>
                     <a className="link link-hover hover:text-secondary transition-colors" href="https://students.iitk.ac.in/gymkhana/" target="_blank" rel="noopener noreferrer">Students Gymkhana</a>
-                    <Link className="link link-hover hover:text-secondary transition-colors" to="/icc">ICC Website</Link>
+                    <Link className="link link-hover hover:text-secondary transition-colors" to="/icc" onClick={(e) => handleNavClick(e, "/icc")}>ICC Website</Link>
                 </nav>
                 <nav>
                     <h6 className="footer-title text-secondary">Documents</h6>

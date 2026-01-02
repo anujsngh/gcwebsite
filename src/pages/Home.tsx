@@ -20,7 +20,7 @@ Our mission is to create a supportive environment where everyone is treated with
 We welcome anyone residing, working, or visiting the campus to approach us. Whether you're a student, faculty member, or staff, all information shared with us remains completely confidential. Together, we strive to build a culture of mutual respect and understanding, where everyone's boundaries are acknowledged and honored."
             img={aboutUsImg}
             imgAlt="About Us"
-            link="./about"
+            link="/about"
             linkText="Know More.."
             imageCredit="Countdown 2030 Europe"
           />

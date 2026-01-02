@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import logo from "../../assets/images/logo_gc_new.png";
 import logo_iitk from "../../assets/images/logo-iitk.png";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 
 const Navbar: React.FC = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const location = useLocation();
+    const navigate = useNavigate();
     const menuRef = useRef<HTMLDivElement>(null);
 
     const toggleMenu = () => {
@@ -28,6 +29,15 @@ const Navbar: React.FC = () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, [menuOpen]);
+
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+        e.preventDefault();
+        setMenuOpen(false);
+        navigate(path);
+        setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 100);
+    };
 
     const navLinks = [
         { path: "/", label: "Home" },
@@ -56,7 +66,7 @@ const Navbar: React.FC = () => {
                                     <Link
                                         to={link.path}
                                         className={location.pathname === link.path ? "active-link" : "nav-link"}
-                                        onClick={() => setMenuOpen(false)}
+                                        onClick={(e) => handleNavClick(e, link.path)}
                                     >
                                         {link.label}
                                     </Link>
@@ -65,7 +75,7 @@ const Navbar: React.FC = () => {
                         </ul>
                     )}
                 </div>
-                <Link to="/" className="flex items-center gap-2">
+                <Link to="/" onClick={(e) => handleNavClick(e, "/")} className="flex items-center gap-2">
                     <img src={logo} className="max-w-10 sm:max-w-12 w-auto" alt="Gender Cell Logo" />
                     <span className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-primary to-secondary inline-block text-transparent bg-clip-text font-heading whitespace-nowrap">
                         Gender Cell
@@ -84,6 +94,7 @@ const Navbar: React.FC = () => {
                             <Link
                                 to={link.path}
                                 className={location.pathname === link.path ? "active-link" : "nav-link"}
+                                onClick={(e) => handleNavClick(e, link.path)}
                             >
                                 {link.label}
                             </Link>

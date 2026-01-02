@@ -62,7 +62,7 @@ const SupportService: React.FC = () => {
                                     <div>
                                         <h3 className="font-bold text-lg mb-1">How to Approach ICC</h3>
                                         <ul className="list-disc list-inside space-y-1 text-base-content/80">
-                                            <li>Call/email/meet/file a paper complaint to the Presiding Officer, ICC, and (<a href="/icc" className="link link-primary" target="_blank" rel="noopener noreferrer">Current Presiding Officer</a>)</li>
+                                            <li>Call/email/meet/file a paper complaint to the Presiding Officer, ICC, and (<a href="/icc" className="link link-primary">Current Presiding Officer</a>)</li>
                                             <li>Email: <a href="mailto:icc@iitk.ac.in" className="link link-primary">icc@iitk.ac.in</a></li>
                                         </ul>
                                         <p className="mt-3 text-sm text-base-content/70">Examples of <a href="https://drive.google.com/file/d/1TCsyZiFZx54BCQ94lBiURF5a8lNBbMSZ/view?usp=drive_link" className="link link-primary" target="_blank" rel="noopener noreferrer">offences</a> and <a href="https://drive.google.com/file/d/1aNdxRAM4sPFhVcs3Aeqhu5YFk9ChHn-c/view?usp=drive_link" className="link link-primary" target="_blank" rel="noopener noreferrer">punishments given</a> in cases with ICC at IIT Kanpur (the two lists do not have one-to-one correspondence).</p>

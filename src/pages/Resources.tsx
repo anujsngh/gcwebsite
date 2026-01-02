@@ -20,7 +20,7 @@ const Resources: React.FC = () => {
     const resources = [
         { name: "ICC case Correspondence Document (New)", author: "ICC IIT Kanpur", resourceType: "Document", link: "https://docs.google.com/document/d/1T4lHHlAgfsC_DAu7ukZdpVF8ytcCGs_HgWJBoNIvMjA/edit?usp=sharing" },
         { name: "The Sexual Harassment of Women at Workplace Act, 2013 (POSH)", author: "Ministry of Law and Justice", resourceType: "Act", link: "https://drive.google.com/file/d/11n9HL9SIGfCHMhTZhmdJ8ohIaX-Kgt2s/view?usp=drive_link" },
-        { name: "Internal Complaints Committee", author: "ICC", resourceType: "WEBSITE Link", link: "https://website-33w.pages.dev/icc/" },
+        { name: "Internal Complaints Committee", author: "ICC", resourceType: "WEBSITE Link", link: "/icc" },
         { name: "CSS Conduct Rules", author: "Department of Personnel and Training ", resourceType: "Rules", link: "https://drive.google.com/file/d/1InAyLMV51J7SBKR2TwQcYQhNmsepdqNu/view " },
         { name: "Rules for The Sexual Harassment of Women at Workplace (Prevention, Prohibition, and Redressal) Act, 2013.", author: "Department of Women and Child Development", resourceType: "Rules", link: "https://drive.google.com/file/d/11n9HL9SIGfCHMhTZhmdJ8ohIaX-Kgt2s/view?usp=drive_link" },
         { name: "HANDBOOK on Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013.", author: "Department of Women and Child Development", resourceType: "Rules", link: "https://drive.google.com/file/d/17A1q54ckDjmU4E2hdTAyQ9HgZZ3Q-Iac/view?usp=drive_link" },
