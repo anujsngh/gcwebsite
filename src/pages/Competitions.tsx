@@ -4,11 +4,21 @@ import BannerCard from "../components/Cards/BannerCard";
 
 import { getContentByFolder } from "../utils/firebaseUtils";
 
+interface DateRange {
+    start: string;
+    end?: string;
+}
+
+interface TimeRange {
+    start: string;
+    end?: string;
+}
+
 interface CompetitionData {
     id: string;
     heading?: string;
-    date?: string;
-    time?: string;
+    date?: DateRange;
+    time?: TimeRange;
     venue?: string;
     theme?: string;
     content: string;

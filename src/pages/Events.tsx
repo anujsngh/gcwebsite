@@ -28,11 +28,21 @@ import lapata2 from "../assets/images_events/lapata2.png";
 import barbie1 from "../assets/images_events/barbie1.png";
 import barbie2 from "../assets/images_events/barbie2.png";
 
+interface DateRange {
+  start: string;
+  end?: string;
+}
+
+interface TimeRange {
+  start: string;
+  end?: string;
+}
+
 interface EventData {
   id: string;
   heading?: string;
-  date?: string;
-  time?: string;
+  date?: DateRange;
+  time?: TimeRange;
   venue?: string;
   speaker?: string;
   theme?: string;
@@ -51,7 +61,7 @@ interface GalleryItem {
 const EventsPage: React.FC = () => {
   const [events, setEvents] = useState<EventData[]>([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
+  const [_swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
   const [prevEl, setPrevEl] = useState<HTMLButtonElement | null>(null);
   const [nextEl, setNextEl] = useState<HTMLButtonElement | null>(null);
   const [paginationEl, setPaginationEl] = useState<HTMLDivElement | null>(null);

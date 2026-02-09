@@ -21,8 +21,8 @@ export const transformImageKitUrl = (
   url: string,
   options: ImageKitTransformOptions
 ): string => {
-  if (!url || !url.includes('imagekit.io')) {
-    return url; // Return original URL if not an ImageKit URL
+  if (!url || typeof url !== 'string' || !url.includes('imagekit.io')) {
+    return url || ''; // Return original URL or empty string if not an ImageKit URL
   }
 
   const transformations: string[] = [];

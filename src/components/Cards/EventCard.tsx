@@ -1,13 +1,24 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import { getOptimizedEventCardImage, getLQIPUrl } from '../../utils/imagekitUtils';
+import { formatDateRange, formatTimeRange } from '../../utils/datetimeUtils';
+
+interface DateRange {
+    start: string;
+    end?: string;
+}
+
+interface TimeRange {
+    start: string;
+    end?: string;
+}
 
 interface EventCardProps {
     heading?: string;
     content: string;
     image?: string;
-    date?: string;
-    time?: string;
+    date?: DateRange;
+    time?: TimeRange;
     venue?: string;
     speaker?: string;
     theme?: string;
@@ -49,8 +60,18 @@ const EventCard: React.FC<EventCardProps> = ({
             <div className="card-body lg:w-2/3">
                 {heading && <h2 className="card-title text-2xl font-bold mb-4">{heading}</h2>}
                 <div className="space-y-2 text-sm text-base-content/80">
-                    {date && <p><span className="font-semibold">Date:</span> {date}</p>}
-                    {time && <p><span className="font-semibold">Time:</span> {time}</p>}
+                    {date && date.start && (
+                        <p>
+                            <span className="font-semibold">Date:</span>{' '}
+                            {formatDateRange(date.start, date.end)}
+                        </p>
+                    )}
+                    {time && time.start && (
+                        <p>
+                            <span className="font-semibold">Time:</span>{' '}
+                            {formatTimeRange(time.start, time.end)}
+                        </p>
+                    )}
                     {venue && <p><span className="font-semibold">Venue:</span> {venue}</p>}
                     {speaker && <p><span className="font-semibold">Speaker:</span> {speaker}</p>}
                     {theme && <p><span className="font-semibold">Theme:</span> {theme}</p>}
