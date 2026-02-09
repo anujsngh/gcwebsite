@@ -31,7 +31,8 @@ import barbie2 from "../assets/images_events/barbie2.png";
 interface EventData {
   id: string;
   heading?: string;
-  datetime?: string;
+  date?: string;
+  time?: string;
   venue?: string;
   speaker?: string;
   theme?: string;
@@ -123,7 +124,7 @@ const EventsPage: React.FC = () => {
 
   useEffect(() => {
     const fetchEvents = async () => {
-      const eventData = await getContentByFolder('event');
+      const eventData = await getContentByFolder('events');
       setEvents(eventData.reverse());
     };
 
@@ -141,7 +142,8 @@ const EventsPage: React.FC = () => {
             <EventCard
               key={event.id}
               heading={event.heading}
-              datetime={event.datetime}
+              date={event.date}
+              time={event.time}
               venue={event.venue}
               speaker={event.speaker}
               theme={event.theme}

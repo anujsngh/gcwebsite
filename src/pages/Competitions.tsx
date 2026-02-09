@@ -7,7 +7,8 @@ import { getContentByFolder } from "../utils/firebaseUtils";
 interface CompetitionData {
     id: string;
     heading?: string;
-    datetime?: string;
+    date?: string;
+    time?: string;
     venue?: string;
     theme?: string;
     content: string;
@@ -44,7 +45,8 @@ const Competitions: React.FC = () => {
                             <EventCard
                                 key={comp.id}
                                 heading={comp.heading}
-                                datetime={comp.datetime}
+                                date={comp.date}
+                                time={comp.time}
                                 venue={comp.venue}
                                 theme={comp.theme}
                                 content={comp.content}

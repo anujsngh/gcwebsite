@@ -6,7 +6,8 @@ interface EventCardProps {
     heading?: string;
     content: string;
     image?: string;
-    datetime?: string;
+    date?: string;
+    time?: string;
     venue?: string;
     speaker?: string;
     theme?: string;
@@ -16,7 +17,8 @@ const EventCard: React.FC<EventCardProps> = ({
     heading,
     content,
     image,
-    datetime,
+    date,
+    time,
     venue,
     speaker,
     theme,
@@ -47,7 +49,8 @@ const EventCard: React.FC<EventCardProps> = ({
             <div className="card-body lg:w-2/3">
                 {heading && <h2 className="card-title text-2xl font-bold mb-4">{heading}</h2>}
                 <div className="space-y-2 text-sm text-base-content/80">
-                    {datetime && <p><span className="font-semibold">Date:</span> {datetime}</p>}
+                    {date && <p><span className="font-semibold">Date:</span> {date}</p>}
+                    {time && <p><span className="font-semibold">Time:</span> {time}</p>}
                     {venue && <p><span className="font-semibold">Venue:</span> {venue}</p>}
                     {speaker && <p><span className="font-semibold">Speaker:</span> {speaker}</p>}
                     {theme && <p><span className="font-semibold">Theme:</span> {theme}</p>}
@@ -72,9 +75,8 @@ const EventCard: React.FC<EventCardProps> = ({
                     <img
                         src={getOptimizedEventCardImage(image)}
                         alt={heading || "Event image"}
-                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
-                            imageLoaded ? 'opacity-100' : 'opacity-0'
-                        }`}
+                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'
+                            }`}
                         loading="lazy"
                         onLoad={() => {
                             setImageLoaded(true);
