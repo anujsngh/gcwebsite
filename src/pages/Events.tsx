@@ -5,6 +5,7 @@ import BannerCard from "../components/Cards/BannerCard";
 import GalleryCard from "../components/Cards/GalleryCard";
 
 import { getContentByFolder } from "../utils/firebaseUtils";
+import { sortByDateTime } from "../utils/sortUtils";
 
 // Swiper imports
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -18,15 +19,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 // Gallery styles
-import '../css/Gallery.css';// Import images for gallery
-import hall1 from "../assets/images_events/hall1.jpg";
-import hall2 from "../assets/images_events/hall2.jpg";
-import lapata1 from "../assets/images_events/lapata1.png";
-import runwalk2 from "../assets/images_events/run_walk2.png";
-import runwalk3 from "../assets/images_events/run_walk3.png";
-import lapata2 from "../assets/images_events/lapata2.png";
-import barbie1 from "../assets/images_events/barbie1.png";
-import barbie2 from "../assets/images_events/barbie2.png";
+import '../css/Gallery.css';
 
 interface DateRange {
   start: string;
@@ -48,14 +41,7 @@ interface EventData {
   theme?: string;
   content: string;
   image?: string;
-}
-
-interface GalleryItem {
-  id: number;
-  img: string;
-  title: string;
-  description: string;
-  date: string;
+  winner?: string;
 }
 
 const EventsPage: React.FC = () => {
@@ -66,64 +52,16 @@ const EventsPage: React.FC = () => {
   const [nextEl, setNextEl] = useState<HTMLButtonElement | null>(null);
   const [paginationEl, setPaginationEl] = useState<HTMLDivElement | null>(null);
 
-  const galleryData: GalleryItem[] = [
-    {
-      id: 1,
-      img: hall1,
-      title: "Hall Event 2024",
-      description: "Annual gathering celebration",
-      date: "March 2024"
-    },
-    {
-      id: 2,
-      img: hall2,
-      title: "Community Workshop",
-      description: "Gender sensitization seminar",
-      date: "March 2024"
-    },
-    {
-      id: 3,
-      img: lapata1,
-      title: "Lapata Ladies Screening",
-      description: "Movie screening and discussion",
-      date: "February 2024"
-    },
-    {
-      id: 4,
-      img: runwalk2,
-      title: "Run for Equality",
-      description: "Awareness run/walk event",
-      date: "January 2024"
-    },
-    {
-      id: 5,
-      img: runwalk3,
-      title: "Community Run 2024",
-      description: "Annual campus run event",
-      date: "January 2024"
-    },
-    {
-      id: 6,
-      img: lapata2,
-      title: "Film Discussion Session",
-      description: "Interactive movie discussion",
-      date: "February 2024"
-    },
-    {
-      id: 7,
-      img: barbie1,
-      title: "Barbie Movie Screening",
-      description: "Special screening event",
-      date: "December 2023"
-    },
-    {
-      id: 8,
-      img: barbie2,
-      title: "Barbie Celebration",
-      description: "Themed celebration event",
-      date: "December 2023"
-    },
-  ];
+  // Build gallery data from Firebase events that have an image
+  const galleryData = events
+    .filter((event) => event.image)
+    .map((event) => ({
+      id: event.id,
+      img: event.image!,
+      title: event.heading || 'Event',
+      description: event.theme || event.content?.slice(0, 60) || '',
+      date: event.date?.start || '',
+    }));
 
   const title = "Know More About Our Recent Events";
   const description = "Here is a vibrant showcase of the different events we organize to promote gender equality and create a safe and inclusive environment for all. In the past, we have organized multiple workshops, seminars, awareness programs, and activities. Join us in our mission to foster understanding, support, and empowerment within the community.";
@@ -135,7 +73,7 @@ const EventsPage: React.FC = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       const eventData = await getContentByFolder('events');
-      setEvents(eventData.reverse());
+      setEvents(sortByDateTime(eventData));
     };
 
     fetchEvents();
@@ -159,17 +97,13 @@ const EventsPage: React.FC = () => {
               theme={event.theme}
               content={event.content}
               image={event.image}
+              winner={event.winner}
             />
           ))}
         </div>
       </section>
 
       <section className="gallery-section py-20 md:py-24 bg-base-100 relative" id="gallery" aria-label="Event Gallery">
-        {/* Decorative Floating Particles */}
-        <div className="gallery-particle gallery-particle-1" aria-hidden="true"></div>
-        <div className="gallery-particle gallery-particle-2" aria-hidden="true"></div>
-        <div className="gallery-particle gallery-particle-3" aria-hidden="true"></div>
-
         <div className="page-container relative z-10">
           <Fade triggerOnce>
             <div className="text-center mb-8 md:mb-10">

@@ -15,73 +15,14 @@
   z-index: 0;
 }
 
-/* Decorative Floating Particles */
-.gallery-particle {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 1;
-  will-change: transform;
-}
-
-.gallery-particle-1 {
-  width: 6.25rem;
-  height: 6.25rem;
-  background: radial-gradient(circle, rgba(79, 70, 229, 0.15), transparent);
-  top: 10%;
-  left: 5%;
-  animation: float 8s ease-in-out infinite;
-}
-
-.gallery-particle-2 {
-  width: 7.5rem;
-  height: 7.5rem;
-  background: radial-gradient(circle, rgba(20, 184, 166, 0.15), transparent);
-  top: 60%;
-  right: 8%;
-  animation: float 10s ease-in-out infinite reverse;
-}
-
-.gallery-particle-3 {
-  width: 5rem;
-  height: 5rem;
-  background: radial-gradient(circle, rgba(79, 70, 229, 0.1), transparent);
-  bottom: 15%;
-  left: 10%;
-  animation: float 12s ease-in-out infinite;
-}
-
 /* Respect user's motion preferences */
 @media (prefers-reduced-motion: reduce) {
-  .gallery-particle {
-    animation: none;
-  }
-
   .gallery-card {
     transition: none;
   }
 
   .gallery-slide {
     transition: opacity 0.3s ease;
-  }
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-
-  25% {
-    transform: translate(0.625rem, -1.25rem);
-  }
-
-  50% {
-    transform: translate(-0.625rem, -2.5rem);
-  }
-
-  75% {
-    transform: translate(0.3125rem, -1.25rem);
   }
 }
 

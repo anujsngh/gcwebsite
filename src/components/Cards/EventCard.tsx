@@ -22,6 +22,7 @@ interface EventCardProps {
     venue?: string;
     speaker?: string;
     theme?: string;
+    winner?: string;
 }
 
 const EventCard: React.FC<EventCardProps> = ({
@@ -33,6 +34,7 @@ const EventCard: React.FC<EventCardProps> = ({
     venue,
     speaker,
     theme,
+    winner,
 }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
@@ -75,6 +77,7 @@ const EventCard: React.FC<EventCardProps> = ({
                     {venue && <p><span className="font-semibold">Venue:</span> {venue}</p>}
                     {speaker && <p><span className="font-semibold">Speaker:</span> {speaker}</p>}
                     {theme && <p><span className="font-semibold">Theme:</span> {theme}</p>}
+                    {winner && <p><span className="font-semibold">Winner:</span> {winner}</p>}
                 </div>
                 <div
                     className="mt-4 prose prose-sm max-w-none"

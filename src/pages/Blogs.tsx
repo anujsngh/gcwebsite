@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import BannerCard from "../components/Cards/BannerCard";
 import { getContentByFolder } from "../utils/firebaseUtils";
+import { sortByDate } from "../utils/sortUtils";
 
 interface BlogPost {
     id: string;
@@ -29,7 +30,7 @@ const Blogs: React.FC = () => {
             try {
                 setLoading(true);
                 const blogData = await getContentByFolder("blogs");
-                setBlogPosts(blogData.reverse());
+                setBlogPosts(sortByDate(blogData));
             } catch (error) {
                 console.error("Error fetching blog posts:", error);
             } finally {
