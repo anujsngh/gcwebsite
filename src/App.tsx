@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { HashRouter, Route, Routes, useLocation } from 'react-router-dom';
 import { Layout as AppLayout } from './AppLayout.tsx';
 import { Home } from './pages/Home.tsx';
 import Resources from './pages/Resources.tsx';
@@ -51,9 +51,9 @@ const App = () => {
 }
 
 const AppWrapper = () => (
-  <BrowserRouter>
+  <HashRouter>
     <App />
-  </BrowserRouter>
+  </HashRouter>
 );
 
 export default AppWrapper;
