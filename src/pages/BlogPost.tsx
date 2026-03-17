@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getContentByFolder } from '../utils/firebaseUtils';
+import { getOptimizedEventCardImage, getLQIPUrl, getImageUrl, ImageColumnValue } from '../utils/imagekitUtils';
 
 interface BlogPostData {
     id: string;
@@ -10,7 +11,7 @@ interface BlogPostData {
     date: string;
     category: string;
     readtime: string;
-    image: string;
+    image: string | ImageColumnValue;
     content: string;
 }
 
@@ -59,6 +60,8 @@ const BlogPost: React.FC = () => {
         );
     }
 
+    const imgUrl = getImageUrl(post.image);
+
     return (
         <div className="min-h-screen bg-base-100 py-12 px-4">
             <div className="container mx-auto max-w-4xl">
@@ -71,11 +74,17 @@ const BlogPost: React.FC = () => {
                 </button>
 
                 <article className="bg-base-100 rounded-xl overflow-hidden">
-                    <div className="w-full h-[400px] rounded-2xl overflow-hidden mb-10 shadow-lg">
+                    <div className="w-full h-[400px] rounded-2xl overflow-hidden mb-10 shadow-lg relative">
                         <img
-                            src={post.image}
+                            src={getLQIPUrl(imgUrl)}
+                            alt=""
+                            className="absolute inset-0 w-full h-full object-cover blur-sm"
+                            aria-hidden="true"
+                        />
+                        <img
+                            src={getOptimizedEventCardImage(imgUrl)}
                             alt={post.heading}
-                            className="w-full h-full object-contain"
+                            className="absolute inset-0 w-full h-full object-cover"
                         />
                     </div>
 

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import BannerCard from "../components/Cards/BannerCard";
 import { getContentByFolder } from "../utils/firebaseUtils";
 import { sortByDate } from "../utils/sortUtils";
+import { getOptimizedEventCardImage, getLQIPUrl, getImageUrl, ImageColumnValue } from "../utils/imagekitUtils";
 
 interface BlogPost {
     id: string;
@@ -12,7 +13,7 @@ interface BlogPost {
     date: string;
     category: string;
     readtime: string;
-    image: string;
+    image: string | ImageColumnValue;
     content: string;
 }
 
@@ -59,15 +60,24 @@ const Blogs: React.FC = () => {
                     </div>
                 ) : (
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {blogPosts.map((post, index) => (
+                        {blogPosts.map((post, index) => {
+                            const imgUrl = getImageUrl(post.image);
+                            return (
                             <article key={post.id || index} className="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 border border-base-200 flex flex-col h-full group">
                                 <figure className="relative h-64 overflow-hidden">
                                     <img
-                                        src={post.image}
-                                        alt={post.heading}
-                                        className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
+                                        src={getLQIPUrl(imgUrl)}
+                                        alt=""
+                                        className="absolute inset-0 w-full h-full object-cover blur-sm"
+                                        aria-hidden="true"
                                     />
-                                    <div className="absolute top-4 right-4 badge badge-primary badge-lg">{post.category}</div>
+                                    <img
+                                        src={getOptimizedEventCardImage(imgUrl)}
+                                        alt={post.heading}
+                                        className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                        loading="lazy"
+                                    />
+                                    <div className="absolute top-4 right-4 badge badge-primary badge-lg z-10">{post.category}</div>
                                 </figure>
                                 <div className="card-body flex-grow">
                                     <div className="flex justify-between items-center text-sm text-base-content/60 mb-4">
@@ -90,7 +100,8 @@ const Blogs: React.FC = () => {
                                     </div>
                                 </div>
                             </article>
-                        ))}
+                            );
+                        })}
                     </div>
                 )}
             </div>

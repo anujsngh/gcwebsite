@@ -2,6 +2,23 @@
  * Utility functions for ImageKit URL transformations
  */
 
+export interface ImageColumnValue {
+  fileId?: string;
+  name?: string;
+  thumbnailUrl?: string;
+  url?: string;
+}
+
+/**
+ * Extracts the image URL from a Firebase image field.
+ * The field can be a plain string URL or an object with { url, thumbnailUrl, ... }.
+ */
+export const getImageUrl = (image: string | ImageColumnValue | null | undefined): string => {
+  if (!image) return '';
+  if (typeof image === 'string') return image;
+  return image.url || image.thumbnailUrl || '';
+};
+
 export interface ImageKitTransformOptions {
   width?: number;
   height?: number;

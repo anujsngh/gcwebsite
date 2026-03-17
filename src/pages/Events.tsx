@@ -6,6 +6,7 @@ import GalleryCard from "../components/Cards/GalleryCard";
 
 import { getContentByFolder } from "../utils/firebaseUtils";
 import { sortByDateTime } from "../utils/sortUtils";
+import { getImageUrl, ImageColumnValue } from "../utils/imagekitUtils";
 
 // Swiper imports
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -40,7 +41,7 @@ interface EventData {
   speaker?: string;
   theme?: string;
   content: string;
-  image?: string;
+  image?: string | ImageColumnValue;
   winner?: string;
 }
 
@@ -54,10 +55,10 @@ const EventsPage: React.FC = () => {
 
   // Build gallery data from Firebase events that have an image
   const galleryData = events
-    .filter((event) => event.image)
+    .filter((event) => event.image && getImageUrl(event.image))
     .map((event) => ({
       id: event.id,
-      img: event.image!,
+      img: getImageUrl(event.image),
       title: event.heading || 'Event',
       description: event.theme || event.content?.slice(0, 60) || '',
       date: event.date?.start || '',
@@ -96,7 +97,7 @@ const EventsPage: React.FC = () => {
               speaker={event.speaker}
               theme={event.theme}
               content={event.content}
-              image={event.image}
+              image={getImageUrl(event.image)}
               winner={event.winner}
             />
           ))}
