@@ -57,9 +57,14 @@ export const Footer: React.FC = () => {
                     <a className="link link-hover hover:text-secondary transition-colors" href="https://drive.google.com/file/d/1InAyLMV51J7SBKR2TwQcYQhNmsepdqNu/view?usp=drive_link" target="_blank" rel="noopener noreferrer">CSS Conduct Rules</a>
                 </nav>
             </footer>
-            <footer className="footer footer-center p-4 max-w-7xl mx-auto border-t border-neutral-content/20">
+            <footer className="footer footer-center p-4 max-w-7xl mx-auto border-t border-neutral-content/20 gap-1">
                 <aside>
                     <p>Copyright © {new Date().getFullYear()} - All right reserved by Gender Cell, IIT Kanpur</p>
+                    <p className="text-xs text-neutral-content/90">
+                        This website conforms to{' '}
+                        <abbr title="Web Content Accessibility Guidelines 2.1 Level AA">WCAG 2.1 AA</abbr>
+                        {' '}accessibility standards to ensure an inclusive experience for all users.
+                    </p>
                 </aside>
             </footer>
         </div>

@@ -25,7 +25,7 @@ export const Layout = () => {
         id="main-content"
         role="main"
         tabIndex={-1}
-        className="flex-grow container mx-auto px-4 py-8 outline-none"
+        className="flex-grow outline-none"
       >
         <Outlet />
       </main>
