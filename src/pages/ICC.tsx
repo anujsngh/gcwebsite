@@ -40,7 +40,7 @@ const ICC: React.FC = () => {
                 <div id="current-committee" className="mb-12">
                     <h2 className="text-xl md:text-2xl font-bold mb-6 font-heading text-primary">
                         The Current Committee
-                        <span className="text-sm font-normal ml-2 text-base-content/70 block md:inline mt-2 md:mt-0">
+                        <span className="text-sm font-normal ml-2 text-base-content/90 block md:inline mt-2 md:mt-0">
                             (Office Orders:
                             <a href="https://web.iitk.ac.in/july14iitkn/data/directorateoff_orders/Office-Order-no-71-20-12-21.pdf" className="link link-hover ml-1" target="_blank" rel="noopener noreferrer">1</a>,
                             <a href="https://web.iitk.ac.in/july14iitkn/data/directorateoff_orders/Office-Order-no-25_ICC-18-04-22.pdf" className="link link-hover ml-1" target="_blank" rel="noopener noreferrer">2</a>,
@@ -61,7 +61,7 @@ const ICC: React.FC = () => {
                                     {member.email.map((email, i) => (
                                         <a key={i} href={`mailto:${email}`} className="link link-primary text-sm block">{email}</a>
                                     ))}
-                                    {member.phone && <p className="text-sm mt-2 text-base-content/70">Ph: {member.phone}</p>}
+                                    {member.phone && <p className="text-sm mt-2 text-base-content/90">Ph: {member.phone}</p>}
                                 </div>
                             </div>
                         ))}
@@ -74,7 +74,7 @@ const ICC: React.FC = () => {
                         <li>Any woman employee of IIT Kanpur including faculty and staff as well as any woman residing in the Campus or visiting the Campus in any capacity may file a complaint against an incident of sexual harassment.</li>
                         <li>Any student, irrespective of age and/or gender, may file a complaint against an incident of sexual harassment</li>
                     </ul>
-                    <p className="mt-4 text-base-content/80">Complaints from the above categories of complainants will be dealt with as per the IIT Kanpur Prevention, Prohibition and Redressal of Sexual Harassment of Students <a href="https://drive.google.com/drive/folders/1briP1XamBsuLRxCmmTZ3YOh9bvrUV2v9" className="link link-primary" target="_blank" rel="noopener noreferrer"> Rules 2017</a> or the IIT Kanpur (Inquiry into Complaints of Sexual Harassment of Women at Workplace) <a href="https://drive.google.com/drive/folders/1briP1XamBsuLRxCmmTZ3YOh9bvrUV2v9" className="link link-primary" target="_blank" rel="noopener noreferrer"> Rules, 2021</a>, whichever is relevant.</p>
+                    <p className="mt-4 text-base-content/90">Complaints from the above categories of complainants will be dealt with as per the IIT Kanpur Prevention, Prohibition and Redressal of Sexual Harassment of Students <a href="https://drive.google.com/drive/folders/1briP1XamBsuLRxCmmTZ3YOh9bvrUV2v9" className="link link-primary" target="_blank" rel="noopener noreferrer"> Rules 2017</a> or the IIT Kanpur (Inquiry into Complaints of Sexual Harassment of Women at Workplace) <a href="https://drive.google.com/drive/folders/1briP1XamBsuLRxCmmTZ3YOh9bvrUV2v9" className="link link-primary" target="_blank" rel="noopener noreferrer"> Rules, 2021</a>, whichever is relevant.</p>
                 </div>
 
                 <div id="how-to-file" className="mb-12">

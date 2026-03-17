@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useReducedMotion } from "../../hooks/useReducedMotion";
 
 // Import images
 import img1 from "../../assets/images/open1.jpg";
@@ -15,6 +16,8 @@ const heroImages = [
 ];
 
 const HomeHero: React.FC = () => {
+    const shouldReduceMotion = useReducedMotion();
+
     return (
         <div className="w-full bg-base-100 py-20 lg:py-28 overflow-hidden relative">
             {/* Background Pattern */}
@@ -24,15 +27,15 @@ const HomeHero: React.FC = () => {
 
                 {/* Text Content */}
                 <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    initial={shouldReduceMotion ? false : { opacity: 0, x: -50 }}
+                    animate={shouldReduceMotion ? {} : { opacity: 1, x: 0 }}
+                    transition={shouldReduceMotion ? {} : { duration: 0.8, ease: "easeOut" }}
                 >
                     <motion.span
                         className="block mb-6 text-sm md:text-base text-primary font-semibold tracking-wide uppercase"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2, duration: 0.6 }}
+                        initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
+                        animate={shouldReduceMotion ? {} : { opacity: 1, y: 0 }}
+                        transition={shouldReduceMotion ? {} : { delay: 0.2, duration: 0.6 }}
                     >
                         Gender Cell, IIT Kanpur
                     </motion.span>
@@ -55,12 +58,12 @@ const HomeHero: React.FC = () => {
                     </div>
 
                     <motion.div
-                        className="mt-10 p-6 bg-white/60 backdrop-blur-sm rounded-xl border border-white/50 shadow-sm"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4, duration: 0.6 }}
+                        className="mt-10 p-6 bg-base-200/80 backdrop-blur-sm rounded-xl border border-base-300/50 shadow-sm"
+                        initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
+                        animate={shouldReduceMotion ? {} : { opacity: 1, y: 0 }}
+                        transition={shouldReduceMotion ? {} : { delay: 0.4, duration: 0.6 }}
                     >
-                        <p className="text-sm md:text-base text-slate-700 italic font-medium">
+                        <p className="text-sm md:text-base text-base-content/90 italic font-medium">
                             "I can be changed by what happens to me, but I refuse to be reduced by it."
                         </p>
                         <p className="text-right text-sm text-primary font-bold mt-2">— Maya Angelou</p>
@@ -74,10 +77,10 @@ const HomeHero: React.FC = () => {
                             <motion.div
                                 key={index}
                                 className={`relative rounded-2xl overflow-hidden shadow-2xl ${index % 2 === 0 ? 'mt-8' : 'mb-8'}`}
-                                initial={{ opacity: 0, scale: 0.8, y: 50 }}
-                                animate={{ opacity: 1, scale: 1, y: 0 }}
-                                transition={{ delay: 0.2 * index, duration: 0.8, ease: "backOut" }}
-                                whileHover={{ scale: 1.05, zIndex: 10 }}
+                                initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.8, y: 50 }}
+                                animate={shouldReduceMotion ? {} : { opacity: 1, scale: 1, y: 0 }}
+                                transition={shouldReduceMotion ? {} : { delay: 0.2 * index, duration: 0.8, ease: "backOut" }}
+                                whileHover={shouldReduceMotion ? {} : { scale: 1.05, zIndex: 10 }}
                             >
                                 <img
                                     src={img.src}

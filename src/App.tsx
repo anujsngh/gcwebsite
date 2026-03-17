@@ -12,24 +12,50 @@ import ICC from './pages/ICC.tsx';
 import Blogs from './pages/Blogs.tsx';
 import BlogPost from './pages/BlogPost.tsx';
 import Competitions from './pages/Competitions.tsx';
+import LiveAnnouncer from './components/Accessibility/LiveAnnouncer.tsx';
+
+const PAGE_NAMES: Record<string, string> = {
+  '/': 'Home page',
+  '/about': 'About page',
+  '/events': 'Events page',
+  '/competitions': 'Competitions page',
+  '/blogs': 'Blogs page',
+  '/surveys': 'Surveys and Results page',
+  '/support': 'Support page',
+  '/icc': 'ICC page',
+  '/resources': 'Resources page',
+};
 
 const App = () => {
   const [loading, setLoading] = useState(true);
+  const [announcement, setAnnouncement] = useState('');
   const location = useLocation();
 
   useEffect(() => {
-    const handleLoading = () => {
-      setLoading(true);
-      setTimeout(() => {
-        setLoading(false);
-      }, 500); // Simulate a delay for loading
-    };
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
 
-    handleLoading();
+      // Announce route change to screen readers
+      const pageName = PAGE_NAMES[location.pathname] ?? 'New page';
+      setAnnouncement('');
+      setTimeout(() => {
+        setAnnouncement(`Navigated to ${pageName}`);
+      }, 50);
+
+      // Move focus to main content area for keyboard/screen reader users
+      const main = document.getElementById('main-content');
+      if (main) {
+        main.focus();
+      }
+    }, 500);
   }, [location]);
 
   return (
     <>
+      {/* Screen reader route change announcements — always in DOM */}
+      <LiveAnnouncer message={announcement} />
+
       {loading && <Loader />}
       <Routes>
         <Route path="/" element={<AppLayout />}>
@@ -48,7 +74,7 @@ const App = () => {
       </Routes>
     </>
   );
-}
+};
 
 const AppWrapper = () => (
   <HashRouter>

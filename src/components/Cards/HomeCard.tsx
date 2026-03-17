@@ -49,7 +49,7 @@ const HomeCard: React.FC<HomeCardProps> = ({
         <div className="card lg:card-side bg-base-100 shadow-lg hover:shadow-xl transition-shadow duration-300 mx-6 lg:mx-12 my-4 border border-base-200">
             <div className="card-body lg:w-2/3 p-6 md:p-8">
                 <h2 className="card-title text-2xl font-heading font-bold mb-4">{title}</h2>
-                <p className="font-sans text-base-content/80">{moreInfo}</p>
+                <p className="font-sans text-base-content/90">{moreInfo}</p>
                 {link && (
                     <div className="card-actions mt-5">
                         <Link to={link} onClick={handleClick} className="group w-fit text-primary">

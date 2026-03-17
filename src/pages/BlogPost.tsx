@@ -52,7 +52,7 @@ const BlogPost: React.FC = () => {
         return (
             <div className="min-h-screen flex flex-col justify-center items-center bg-base-100 space-y-6">
                 <h1 className="text-4xl font-bold text-error font-heading">Blog Post Not Found</h1>
-                <p className="text-lg text-base-content/70">The blog post you're looking for doesn't exist.</p>
+                <p className="text-lg text-base-content/90">The blog post you're looking for doesn't exist.</p>
                 <button onClick={() => navigate("/blogs")} className="btn btn-primary">
                     Back to Blogs
                 </button>
@@ -88,7 +88,7 @@ const BlogPost: React.FC = () => {
                         />
                     </div>
 
-                    <div className="flex flex-wrap gap-4 items-center text-sm text-base-content/60 mb-6 font-medium">
+                    <div className="flex flex-wrap gap-4 items-center text-sm text-base-content/90 mb-6 font-medium">
                         <span className="badge badge-primary badge-lg">{post.category}</span>
                         <span>{post.date}</span>
                         <span>•</span>

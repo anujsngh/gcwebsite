@@ -39,15 +39,15 @@ We welcome anyone residing, working, or visiting the campus to approach us. Whet
               { title: "Consent Is Voluntary", text: "Consent must be given freely, without any form of pressure, force, or manipulation. All participants should willingly agree to the activity, making sure that their decision is not influenced by coercion or duress." },
               { title: "Consent Is Required", text: "Consent is essential for any sexual interaction and cannot be inferred from clothing, alcohol consumption, or dancing. It is a distinct, conscious decision made by all parties involved." }
             ].map((item, index) => (
-              <div key={index} className="bg-white p-6 mb-4 border-l-[5px] border-l-secondary rounded-box w-full md:w-[48%] lg:w-[30%] shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div key={index} className="bg-base-100 p-6 mb-4 border-l-[5px] border-l-secondary rounded-box w-full md:w-[48%] lg:w-[30%] shadow-sm hover:shadow-md transition-shadow duration-300">
                 <h3 className="text-secondary mt-0 text-xl md:text-2xl mb-2 font-semibold">{item.title}</h3>
-                <p className="text-base-content/80">{item.text}</p>
+                <p className="text-base-content/90">{item.text}</p>
               </div>
             ))}
 
-            <div className="bg-white p-6 mb-4 border-l-[5px] border-l-secondary rounded-box w-full md:w-full lg:w-[calc(90%+2rem)] shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div className="bg-base-100 p-6 mb-4 border-l-[5px] border-l-secondary rounded-box w-full md:w-full lg:w-[calc(90%+2rem)] shadow-sm hover:shadow-md transition-shadow duration-300">
               <h3 className="text-secondary mt-0 text-xl md:text-2xl mb-2 font-semibold">Consent Is FRIES</h3>
-              <ul className="list-none pl-5 text-base-content/80 space-y-2">
+              <ul className="list-none pl-5 text-base-content/90 space-y-2">
                 <li className="before:content-['•'] before:text-secondary before:pr-2"><strong>Freely Given:</strong> Both partners have the freedom to say yes or no without any pressure or manipulation.</li>
                 <li className="before:content-['•'] before:text-secondary before:pr-2"><strong>Reversible:</strong> Consent can be withdrawn at any time, even in the middle of an activity.</li>
                 <li className="before:content-['•'] before:text-secondary before:pr-2"><strong>Informed:</strong> Both partners need to know exactly what they are consenting to each time.</li>
@@ -61,7 +61,7 @@ We welcome anyone residing, working, or visiting the campus to approach us. Whet
             <p>All sexual interactions must occur between consenting adults. Understanding and respecting consent is crucial in ensuring that all parties feel safe, respected, and valued. By adhering to these principles, we can create a culture of mutual respect and understanding, where everyone's boundaries are acknowledged and honored.</p>
           </div>
 
-          <div className="w-[92%] mx-auto text-right text-sm text-gray-500">
+          <div className="w-[92%] mx-auto text-right text-sm text-base-content/90">
             <p className="font-bold">Credits to:</p>
             <p>University Health and Counseling Services, University of Wisconsin Whitewater</p>
           </div>

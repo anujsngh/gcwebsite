@@ -9,7 +9,7 @@
   position: absolute;
   inset: 0;
   opacity: 0.15;
-  background-image: radial-gradient(#4F46E5 0.5px, transparent 0.5px);
+  background-image: radial-gradient(oklch(var(--p)) 0.5px, transparent 0.5px);
   background-size: 1.5rem 1.5rem;
   pointer-events: none;
   z-index: 0;
@@ -44,7 +44,7 @@
 
 /* Improve focus visibility for keyboard navigation */
 .gallery-card:focus-visible {
-  outline: 3px solid #4F46E5;
+  outline: 3px solid oklch(var(--p));
   outline-offset: 4px;
 }
 
@@ -64,13 +64,13 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.95);
+  background: oklch(var(--b1) / 0.95);
   backdrop-filter: blur(8px);
   width: 3.75rem;
   height: 3.75rem;
   border-radius: 9999px;
-  border: 2px solid rgba(79, 70, 229, 0.2);
-  color: #4F46E5;
+  border: 2px solid oklch(var(--p) / 0.2);
+  color: oklch(var(--p));
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
@@ -81,9 +81,9 @@
 }
 
 .gallery-button:hover {
-  background: #4F46E5;
-  color: #ffffff;
-  border-color: #4F46E5;
+  background: oklch(var(--p));
+  color: oklch(var(--pc));
+  border-color: oklch(var(--p));
   transform: translateY(-50%) scale(1.1);
   box-shadow: 0 8px 20px rgba(79, 70, 229, 0.35), 0 4px 8px rgba(79, 70, 229, 0.2);
 }
@@ -93,7 +93,7 @@
 }
 
 .gallery-button:focus-visible {
-  outline: 3px solid #4F46E5;
+  outline: 3px solid oklch(var(--p));
   outline-offset: 4px;
 }
 
@@ -181,7 +181,7 @@
 }
 
 .gallery-pagination .swiper-pagination-bullet-active {
-  background: #4F46E5 !important;
+  background: oklch(var(--p)) !important;
   width: 2.5rem !important;
   height: 0.625rem !important;
   border-radius: 0.5rem !important;
@@ -195,7 +195,7 @@
 
 /* Dynamic bullets styling */
 .gallery-pagination .swiper-pagination-bullet-active-main {
-  background: #4F46E5 !important;
+  background: oklch(var(--p)) !important;
 }
 
 .gallery-pagination .swiper-pagination-bullet-active-prev,

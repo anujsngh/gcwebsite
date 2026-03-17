@@ -33,7 +33,7 @@ export const Footer: React.FC = () => {
                     </div>
                 </aside>
                 <nav>
-                    <h6 className="footer-title text-secondary">Quick Links</h6>
+                    <h6 className="footer-title text-neutral-content opacity-100">Quick Links</h6>
                     <Link className="link link-hover hover:text-secondary transition-colors" to="/" onClick={(e) => handleNavClick(e, "/")}>Home</Link>
                     <Link className="link link-hover hover:text-secondary transition-colors" to="/about" onClick={(e) => handleNavClick(e, "/about")}>About us</Link>
                     <Link className="link link-hover hover:text-secondary transition-colors" to="/events" onClick={(e) => handleNavClick(e, "/events")}>Events</Link>
@@ -44,13 +44,13 @@ export const Footer: React.FC = () => {
                     <Link className="link link-hover hover:text-secondary transition-colors" to="/competitions" onClick={(e) => handleNavClick(e, "/competitions")}>Competitions</Link>
                 </nav>
                 <nav>
-                    <h6 className="footer-title text-secondary">IITK's LINK</h6>
+                    <h6 className="footer-title text-neutral-content opacity-100">IITK's LINK</h6>
                     <a className="link link-hover hover:text-secondary transition-colors" href="https://www.iitk.ac.in/" target="_blank" rel="noopener noreferrer">IITK HOMEPAGE</a>
                     <a className="link link-hover hover:text-secondary transition-colors" href="https://students.iitk.ac.in/gymkhana/" target="_blank" rel="noopener noreferrer">Students Gymkhana</a>
                     <Link className="link link-hover hover:text-secondary transition-colors" to="/icc" onClick={(e) => handleNavClick(e, "/icc")}>ICC Website</Link>
                 </nav>
                 <nav>
-                    <h6 className="footer-title text-secondary">Documents</h6>
+                    <h6 className="footer-title text-neutral-content opacity-100">Documents</h6>
                     <a className="link link-hover hover:text-secondary transition-colors" href="https://drive.google.com/file/d/1n1TDtLwd1HoBMlgyhMrgKYZWMVLRqzKN/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Mandate</a>
                     <a className="link link-hover hover:text-secondary transition-colors" href="https://drive.google.com/file/d/11n9HL9SIGfCHMhTZhmdJ8ohIaX-Kgt2s/view?usp=drive_link" target="_blank" rel="noopener noreferrer">POSH Act</a>
                     <a className="link link-hover hover:text-secondary transition-colors" href="https://drive.google.com/file/d/1NzUpkvmnCnzDTZwMyqSlJ6uQbpcVWL20/view?usp=drive_link" target="_blank" rel="noopener noreferrer">The Indian Penal Code</a>

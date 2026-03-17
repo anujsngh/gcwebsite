@@ -244,7 +244,7 @@ export const BodyLarge: React.FC<BodyTextProps> = ({
 
   return (
     <Component
-      className={`text-lg leading-relaxed font-sans text-base-content/80 ${alignClasses[align]} ${className}`}
+      className={`text-lg leading-relaxed font-sans text-base-content/90 ${alignClasses[align]} ${className}`}
     >
       {children}
     </Component>
@@ -277,7 +277,7 @@ export const Body: React.FC<BodyTextProps> = ({
 
   return (
     <Component
-      className={`text-base leading-relaxed font-sans text-base-content/80 ${alignClasses[align]} ${className}`}
+      className={`text-base leading-relaxed font-sans text-base-content/90 ${alignClasses[align]} ${className}`}
     >
       {children}
     </Component>
@@ -310,7 +310,7 @@ export const BodySmall: React.FC<BodyTextProps> = ({
 
   return (
     <Component
-      className={`text-sm leading-relaxed font-sans text-base-content/70 ${alignClasses[align]} ${className}`}
+      className={`text-sm leading-relaxed font-sans text-base-content/90 ${alignClasses[align]} ${className}`}
     >
       {children}
     </Component>
@@ -343,7 +343,7 @@ export const Caption: React.FC<BodyTextProps> = ({
 
   return (
     <Component
-      className={`text-xs leading-normal font-sans text-base-content/60 ${alignClasses[align]} ${className}`}
+      className={`text-xs leading-normal font-sans text-base-content/90 ${alignClasses[align]} ${className}`}
     >
       {children}
     </Component>

@@ -100,7 +100,7 @@ const Competitions: React.FC = () => {
                             />
                         ))
                     ) : (
-                        <div className="text-center text-lg text-base-content/70">
+                        <div className="text-center text-lg text-base-content/90">
                             <p>No competitions found at the moment. Please check back later!</p>
                         </div>
                     )}
@@ -198,7 +198,7 @@ const Competitions: React.FC = () => {
 
                                 <button
                                     ref={setPrevEl}
-                                    className="absolute top-1/2 -translate-y-1/2 left-2 md:left-4 z-20 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/90 backdrop-blur-md border border-primary/20 text-primary shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-primary hover:text-white hover:shadow-primary/30 disabled:opacity-30 disabled:cursor-not-allowed"
+                                    className="absolute top-1/2 -translate-y-1/2 left-2 md:left-4 z-20 w-12 h-12 md:w-14 md:h-14 rounded-full bg-base-100/90 backdrop-blur-md border border-primary/20 text-primary shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-primary hover:text-primary-content hover:shadow-primary/30 disabled:opacity-30 disabled:cursor-not-allowed"
                                     aria-label="Previous gallery item"
                                 >
                                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -208,7 +208,7 @@ const Competitions: React.FC = () => {
 
                                 <button
                                     ref={setNextEl}
-                                    className="absolute top-1/2 -translate-y-1/2 right-2 md:right-4 z-20 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/90 backdrop-blur-md border border-primary/20 text-primary shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-primary hover:text-white hover:shadow-primary/30 disabled:opacity-30 disabled:cursor-not-allowed"
+                                    className="absolute top-1/2 -translate-y-1/2 right-2 md:right-4 z-20 w-12 h-12 md:w-14 md:h-14 rounded-full bg-base-100/90 backdrop-blur-md border border-primary/20 text-primary shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-primary hover:text-primary-content hover:shadow-primary/30 disabled:opacity-30 disabled:cursor-not-allowed"
                                     aria-label="Next gallery item"
                                 >
                                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

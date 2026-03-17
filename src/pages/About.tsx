@@ -105,7 +105,7 @@ const About: React.FC = () => {
                         <div className="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
                             <div className="card-body p-6 md:p-8">
                                 <h2 className="card-title text-xl md:text-2xl font-heading mb-4">Who are we?</h2>
-                                <p className="text-base-content/80 leading-relaxed">
+                                <p className="text-base-content/90 leading-relaxed">
                                     The Gender Cell at IIT Kanpur is committed to creating a safe and supportive environment for everyone on campus. We are committed to treating all people with dignity and respect, and we actively prevent any exploitation, sexual harassment, or abuse.
                                 </p>
                             </div>
@@ -113,7 +113,7 @@ const About: React.FC = () => {
                         <div className="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
                             <div className="card-body p-6 md:p-8">
                                 <h2 className="card-title text-xl md:text-2xl font-heading mb-4">What do we do?</h2>
-                                <p className="text-base-content/80 leading-relaxed">
+                                <p className="text-base-content/90 leading-relaxed">
                                     The Cell's goals include raising awareness within the community about gender issues and making a safe campus environment. We address the issue of sexual harassment and abuse across campus. We conduct orientation programs, seminars for students and staff, and sensitize residents from all parts of the community.
                                 </p>
                             </div>
@@ -121,7 +121,7 @@ const About: React.FC = () => {
                         <div className="card bg-base-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
                             <div className="card-body p-6 md:p-8">
                                 <h2 className="card-title text-xl md:text-2xl font-heading mb-4">Who can approach us?</h2>
-                                <p className="text-base-content/80 leading-relaxed">
+                                <p className="text-base-content/90 leading-relaxed">
                                     Any person residing, working or visiting the campus as well as any student can approach us and file complaint in any case of sexual harassment. Your all information will be kept completely confidential.
                                 </p>
                             </div>

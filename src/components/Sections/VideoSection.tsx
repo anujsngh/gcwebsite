@@ -59,9 +59,9 @@ const VideoSection: React.FC = () => {
                             </div>
                             <div className="w-full lg:w-1/2 space-y-4">
                                 <h3 className="text-2xl font-bold font-heading">{video.title}</h3>
-                                <p className="text-base-content/80 leading-relaxed">{video.description}</p>
+                                <p className="text-base-content/90 leading-relaxed">{video.description}</p>
                                 {video.subDescription && (
-                                    <p className="text-base-content/80 leading-relaxed">{video.subDescription}</p>
+                                    <p className="text-base-content/90 leading-relaxed">{video.subDescription}</p>
                                 )}
                                 <p className="text-sm text-primary">
                                     Source: <a href={video.link} target="_blank" rel="noopener noreferrer" className="link link-hover">{video.link}</a>

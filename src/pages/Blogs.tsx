@@ -80,14 +80,14 @@ const Blogs: React.FC = () => {
                                     <div className="absolute top-4 right-4 badge badge-primary badge-lg z-10">{post.category}</div>
                                 </figure>
                                 <div className="card-body flex-grow">
-                                    <div className="flex justify-between items-center text-sm text-base-content/60 mb-4">
+                                    <div className="flex justify-between items-center text-sm text-base-content/90 mb-4">
                                         <span className="font-semibold text-primary">{post.author}</span>
                                         <span>{post.date} • {post.readtime}</span>
                                     </div>
                                     <h2 className="card-title text-2xl font-heading mb-4 cursor-pointer" onClick={() => handleReadMore(index)}>
                                         {post.heading}
                                     </h2>
-                                    <p className="text-base-content/80 line-clamp-3 mb-6 flex-grow">
+                                    <p className="text-base-content/90 line-clamp-3 mb-6 flex-grow">
                                         {post.excerpt}
                                     </p>
                                     <div className="card-actions justify-end mt-auto">

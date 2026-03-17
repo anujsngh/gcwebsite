@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import { getOptimizedEventCardImage, getLQIPUrl } from '../../utils/imagekitUtils';
 import { formatDateRange, formatTimeRange } from '../../utils/datetimeUtils';
+import { useReducedMotion } from '../../hooks/useReducedMotion';
 
 interface DateRange {
     start: string;
@@ -39,6 +40,7 @@ const EventCard: React.FC<EventCardProps> = ({
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
     const controls = useAnimation();
+    const shouldReduceMotion = useReducedMotion();
     const [imageLoaded, setImageLoaded] = useState(false);
     const [showLQIP, setShowLQIP] = useState(true);
 
@@ -51,9 +53,9 @@ const EventCard: React.FC<EventCardProps> = ({
     return (
         <motion.div
             ref={ref}
-            initial="hidden"
-            animate={controls}
-            variants={{
+            initial={shouldReduceMotion ? false : "hidden"}
+            animate={shouldReduceMotion ? {} : controls}
+            variants={shouldReduceMotion ? {} : {
                 hidden: { opacity: 0, x: -50 },
                 visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
             }}
@@ -61,7 +63,7 @@ const EventCard: React.FC<EventCardProps> = ({
         >
             <div className="card-body lg:w-2/3">
                 {heading && <h2 className="card-title text-2xl font-bold mb-4">{heading}</h2>}
-                <div className="space-y-2 text-sm text-base-content/80">
+                <div className="space-y-2 text-sm text-base-content/90">
                     {date && date.start && (
                         <p>
                             <span className="font-semibold">Date:</span>{' '}

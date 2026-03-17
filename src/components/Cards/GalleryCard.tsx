@@ -54,7 +54,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
 
     return (
         <article
-            className={`gallery-card relative w-full h-full rounded-[32px] overflow-hidden bg-white transition-all duration-500 ease-out`}
+            className={`gallery-card relative w-full h-full rounded-[32px] overflow-hidden bg-base-200 transition-all duration-500 ease-out`}
             aria-label={`${title} gallery item`}
             role="group"
             aria-current={isActive ? 'true' : undefined}
@@ -105,7 +105,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
                                 d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
                             />
                         </svg>
-                        <p className="text-sm text-base-content/60">Image unavailable</p>
+                        <p className="text-sm text-base-content/90">Image unavailable</p>
                     </div>
                 )}
 

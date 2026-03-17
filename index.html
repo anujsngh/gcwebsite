@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
@@ -16,6 +16,37 @@
   <meta property="og:title" content="Gender Cell IIT Kanpur" />
   <meta property="og:description" content="Providing support and resources for gender equity at IIT Kanpur." />
   <title>Gender Cell IITK</title>
+
+  <!--
+    Accessibility: Apply stored preferences synchronously before CSS loads to
+    prevent a flash of wrong theme/font-size on page load.
+    This script reads localStorage and sets data-* attributes on <html>.
+  -->
+  <script>
+    (function () {
+      try {
+        var p = JSON.parse(localStorage.getItem('gcwebsite-a11y-prefs') || '{}');
+        var theme =
+          p.contrastMode === 'high-contrast' ? 'high-contrast' :
+          p.contrastMode === 'yellow-black' ? 'yellow-black' :
+          p.themeMode === 'dark' ? 'dark' :
+          p.themeMode === 'system'
+            ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+            : 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+        if (p.fontSize && p.fontSize !== 'normal') {
+          document.documentElement.setAttribute('data-font-size', p.fontSize);
+        }
+        if (p.fontFamily === 'dyslexic') {
+          document.documentElement.setAttribute('data-font-family', 'dyslexic');
+        }
+        if (p.reducedMotion) {
+          document.documentElement.setAttribute('data-reduced-motion', 'true');
+        }
+      } catch (e) { /* Ignore storage errors */ }
+    })();
+  </script>
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-83J62XWBRT"></script>
   <script>
     window.dataLayer = window.dataLayer || [];

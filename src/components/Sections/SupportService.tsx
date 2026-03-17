@@ -9,7 +9,7 @@ const SupportService: React.FC = () => {
 
                     {/* Introduction */}
                     <div className="max-w-3xl mx-auto text-center mb-12">
-                        <p className="text-lg leading-relaxed text-base-content/80">
+                        <p className="text-lg leading-relaxed text-base-content/90">
                             The Gender Cell provides support and guidance for matters related to sexual harassment. Contact any member for assistance and/or to schedule appointments with specialized counselors. All information shared will remain confidential.
                         </p>
                     </div>
@@ -33,7 +33,7 @@ const SupportService: React.FC = () => {
                             <div className="card bg-base-200 shadow-md">
                                 <div className="card-body">
                                     <h2 className="card-title text-2xl font-heading text-primary mb-2">Guidelines for Dealing with Harassment</h2>
-                                    <ul className="list-disc list-inside space-y-2 text-base-content/80">
+                                    <ul className="list-disc list-inside space-y-2 text-base-content/90">
                                         <li>Do not blame yourself.</li>
                                         <li>Do not feel ashamed. Clearly and firmly tell the harasser that you find their behavior inappropriate or offensive.</li>
                                         <li>Speak up! Do not ignore harassment in hopes that it will stop on its own.</li>
@@ -53,7 +53,7 @@ const SupportService: React.FC = () => {
 
                                     <div className="mb-4">
                                         <h3 className="font-bold text-lg mb-1">Who can Approach ICC</h3>
-                                        <ul className="list-disc list-inside space-y-1 text-base-content/80">
+                                        <ul className="list-disc list-inside space-y-1 text-base-content/90">
                                             <li>Any woman employee of IIT Kanpur including faculty and staff as well as any woman residing in the Campus or visiting the Campus in any capacity may file a complaint against an incident of sexual harassment.</li>
                                             <li>Any student, irrespective of age and/or gender, may file a complaint against an incident of sexual harassment as per the <a href="https://drive.google.com/file/d/1d0SVFABd7i2eedQ_W3qwjaa9yVwHJQl-/view?usp=drive_link" className="link link-primary">IIT Kanpur Prevention, Prohibition and Redressal of Sexual Harassment of Students Rules, 2017.</a> </li>
                                         </ul>
@@ -61,11 +61,11 @@ const SupportService: React.FC = () => {
 
                                     <div>
                                         <h3 className="font-bold text-lg mb-1">How to Approach ICC</h3>
-                                        <ul className="list-disc list-inside space-y-1 text-base-content/80">
+                                        <ul className="list-disc list-inside space-y-1 text-base-content/90">
                                             <li>Call/email/meet/file a paper complaint to the Presiding Officer, ICC, and (<a href="/icc" className="link link-primary">Current Presiding Officer</a>)</li>
                                             <li>Email: <a href="mailto:icc@iitk.ac.in" className="link link-primary">icc@iitk.ac.in</a></li>
                                         </ul>
-                                        <p className="mt-3 text-sm text-base-content/70">Examples of <a href="https://drive.google.com/file/d/1TCsyZiFZx54BCQ94lBiURF5a8lNBbMSZ/view?usp=drive_link" className="link link-primary" target="_blank" rel="noopener noreferrer">offences</a> and <a href="https://drive.google.com/file/d/1aNdxRAM4sPFhVcs3Aeqhu5YFk9ChHn-c/view?usp=drive_link" className="link link-primary" target="_blank" rel="noopener noreferrer">punishments given</a> in cases with ICC at IIT Kanpur (the two lists do not have one-to-one correspondence).</p>
+                                        <p className="mt-3 text-sm text-base-content/90">Examples of <a href="https://drive.google.com/file/d/1TCsyZiFZx54BCQ94lBiURF5a8lNBbMSZ/view?usp=drive_link" className="link link-primary" target="_blank" rel="noopener noreferrer">offences</a> and <a href="https://drive.google.com/file/d/1aNdxRAM4sPFhVcs3Aeqhu5YFk9ChHn-c/view?usp=drive_link" className="link link-primary" target="_blank" rel="noopener noreferrer">punishments given</a> in cases with ICC at IIT Kanpur (the two lists do not have one-to-one correspondence).</p>
                                     </div>
                                 </div>
                             </div>
@@ -76,7 +76,7 @@ const SupportService: React.FC = () => {
                             <div className="card bg-base-200 shadow-md">
                                 <div className="card-body">
                                     <h2 className="card-title text-2xl font-heading text-primary mb-2">How ICC Supports</h2>
-                                    <p className="mb-4 text-sm text-base-content/80">The Internal Complaints Committee (ICC) is established under the Sexual Harassment of Women at Workplace (Prevention, Prohibition, and Redressal) Act, 2013, to address complaints of sexual harassment. Here's how the ICC supports individuals facing harassment:</p>
+                                    <p className="mb-4 text-sm text-base-content/90">The Internal Complaints Committee (ICC) is established under the Sexual Harassment of Women at Workplace (Prevention, Prohibition, and Redressal) Act, 2013, to address complaints of sexual harassment. Here's how the ICC supports individuals facing harassment:</p>
                                     <div className="join join-vertical w-full">
                                         <div className="collapse collapse-arrow join-item border border-base-300">
                                             <input type="checkbox" />
@@ -133,7 +133,7 @@ const SupportService: React.FC = () => {
                             <div className="card bg-base-200 shadow-md">
                                 <div className="card-body">
                                     <h2 className="card-title text-2xl font-heading text-primary mb-2">Support from the Gender Cell</h2>
-                                    <p className="text-base-content/80 leading-relaxed">
+                                    <p className="text-base-content/90 leading-relaxed">
                                         The Gender Cell is dedicated to assisting anyone on campus in distress. They offer advice on available courses of action and can facilitate access to the legal cell or security section if needed. Additionally, they arrange meetings with appropriate counsellors or the <a href="mailto:devlina@iitk.ac.in" className="link link-primary">Presiding Officer</a> of the <a href="/icc" className="link link-primary">Internal Complaints Committee (ICC)</a> to address issues of sexual harassment. Committed to providing a supportive environment, the Gender Cell ensures you receive the necessary help. For assistance, please contact any <a href="/about" className="link link-primary">member of the Gender Cell</a>, who will guide and support you through the process.
                                     </p>
                                 </div>
@@ -142,7 +142,7 @@ const SupportService: React.FC = () => {
                             <div className="card bg-base-200 shadow-md">
                                 <div className="card-body">
                                     <h2 className="card-title text-2xl font-heading text-primary mb-2">Mental Health and Counseling Services</h2>
-                                    <p className="text-base-content/80 leading-relaxed">
+                                    <p className="text-base-content/90 leading-relaxed">
                                         The campus offers comprehensive mental health services to support the well-being of students, faculty, and staff. These services include individual counseling, group therapy, workshops on stress management, and wellness programs. Trained mental health professionals are available to provide confidential support and guidance on a wide range of issues, including anxiety, depression, academic stress, and personal challenges. Please contact any <a href="/about" className="link link-primary">member of the Gender Cell</a> for fixing an appointment with the counsellor. Your information will be kept confidential.
                                     </p>
                                 </div>
