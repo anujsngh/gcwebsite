@@ -6,6 +6,7 @@ import GalleryCard from "../components/Cards/GalleryCard";
 
 import { getContentByFolder } from "../utils/firebaseUtils";
 import { sortByDateTime } from "../utils/sortUtils";
+import { getImageUrl, ImageColumnValue } from "../utils/imagekitUtils";
 
 // Swiper imports
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -38,7 +39,7 @@ interface CompetitionData {
     venue?: string;
     theme?: string;
     content: string;
-    image?: string;
+    image?: string | ImageColumnValue;
     winner?: string;
 }
 
@@ -52,10 +53,10 @@ const Competitions: React.FC = () => {
 
     // Build gallery data from Firebase competitions that have an image
     const galleryData = competitions
-        .filter((comp) => comp.image)
+        .filter((comp) => comp.image && getImageUrl(comp.image))
         .map((comp) => ({
             id: comp.id,
-            img: comp.image!,
+            img: getImageUrl(comp.image),
             title: comp.heading || 'Competition',
             description: comp.theme || comp.content?.slice(0, 60) || '',
             date: comp.date?.start || '',
@@ -94,7 +95,7 @@ const Competitions: React.FC = () => {
                                 venue={comp.venue}
                                 theme={comp.theme}
                                 content={comp.content}
-                                image={comp.image}
+                                image={getImageUrl(comp.image)}
                                 winner={comp.winner}
                             />
                         ))
