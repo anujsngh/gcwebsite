@@ -7,6 +7,7 @@ import AccessibilityToolbar from './components/Accessibility/AccessibilityToolba
 
 export const Layout = () => {
   const location = useLocation();
+  const isHomePage = location.pathname === '/';
   // Show LinksSection on all pages except individual blog posts
   const showLinksSection = !location.pathname.startsWith('/blogs/');
 
@@ -25,7 +26,7 @@ export const Layout = () => {
         id="main-content"
         role="main"
         tabIndex={-1}
-        className="flex-grow outline-none"
+        className={`flex-grow outline-none${isHomePage ? '' : ' py-8'}`}
       >
         <Outlet />
       </main>
