@@ -5,6 +5,11 @@
 @tailwind utilities;
 
 @layer base {
+  /* Offset scroll targets so they don't hide behind the sticky navbar */
+  [id] {
+    scroll-margin-top: 5rem;
+  }
+
   body {
     @apply font-sans text-neutral bg-background text-base leading-relaxed;
   }

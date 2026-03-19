@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { HashRouter, Route, Routes, useLocation } from 'react-router-dom';
 import { Layout as AppLayout } from './AppLayout.tsx';
 import { Home } from './pages/Home.tsx';
@@ -30,8 +30,12 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const [announcement, setAnnouncement] = useState('');
   const location = useLocation();
+  const prevPathRef = useRef(location.pathname);
 
   useEffect(() => {
+    const isPathChange = prevPathRef.current !== location.pathname;
+    prevPathRef.current = location.pathname;
+
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
@@ -46,7 +50,13 @@ const App = () => {
       // Move focus to main content area for keyboard/screen reader users
       const main = document.getElementById('main-content');
       if (main) {
-        main.focus();
+        main.focus({ preventScroll: true });
+      }
+
+      // Only scroll to top on actual navigation between pages (not on refresh).
+      // Hash scrolling is handled by LinkCard/HomeCard after navigation.
+      if (isPathChange && !location.hash) {
+        window.scrollTo(0, 0);
       }
     }, 500);
   }, [location]);

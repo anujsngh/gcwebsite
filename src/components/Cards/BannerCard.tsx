@@ -16,11 +16,11 @@ const BannerCard: React.FC<BannerCardProps> = ({ title, description, buttons }) 
         <div className="text-center py-10 px-4 bg-base-100 grain-surface">
             <h1 className="text-4xl font-bold mb-4">{title}</h1>
             <p className="max-w-3xl mx-auto mb-8 text-lg opacity-80">{description}</p>
-            <div className="flex justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
                 {buttons.map((button, index) => (
                     <button
                         key={index}
-                        className="btn btn-primary"
+                        className="btn btn-primary btn-sm sm:btn-md"
                         onClick={() => {
                             const element = document.getElementById(button.sectionId);
                             if (element) {

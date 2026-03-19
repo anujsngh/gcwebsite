@@ -45,7 +45,7 @@ const VideoSection: React.FC = () => {
                     {videos.map((video, index) => (
                         <div key={index} className="flex flex-col lg:flex-row gap-8 items-start bg-base-200 p-6 rounded-xl shadow-md">
                             <div className="w-full lg:w-1/2">
-                                <div className="aspect-w-16 aspect-h-9 w-full h-[315px]">
+                                <div className="aspect-w-16 aspect-h-9 w-full h-[200px] sm:h-[260px] md:h-[315px]">
                                     <iframe
                                         className="w-full h-full rounded-lg shadow-lg"
                                         src={video.src}

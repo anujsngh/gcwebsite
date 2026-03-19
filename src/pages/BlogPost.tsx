@@ -74,7 +74,7 @@ const BlogPost: React.FC = () => {
                 </button>
 
                 <article className="bg-base-100 rounded-xl overflow-hidden">
-                    <div className="w-full h-[400px] rounded-2xl overflow-hidden mb-10 shadow-lg relative">
+                    <div className="w-full h-[250px] sm:h-[350px] md:h-[400px] rounded-2xl overflow-hidden mb-10 shadow-lg relative">
                         <img
                             src={getLQIPUrl(imgUrl)}
                             alt=""

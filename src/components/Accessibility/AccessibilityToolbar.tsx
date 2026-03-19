@@ -79,7 +79,7 @@ const AccessibilityToolbar: React.FC = () => {
           role="dialog"
           aria-label="Accessibility Settings"
           aria-modal="false"
-          className="bg-base-100 border-2 border-base-300 rounded-2xl shadow-2xl p-5 w-72 text-base-content"
+          className="bg-base-100 border-2 border-base-300 rounded-2xl shadow-2xl p-5 w-[calc(100vw-2rem)] max-w-72 text-base-content"
         >
           <h2 className="text-base font-bold mb-4 flex items-center gap-2">
             <span aria-hidden="true">♿</span>

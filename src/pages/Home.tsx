@@ -10,7 +10,7 @@ export const Home: React.FC = () => {
     <>
       <div className="w-full">
         <HomeHero />
-        <div id="about">
+        <div id="about" className="py-16">
           <HomeCard
             title="About Us"
             moreInfo="The Gender Cell, IIT Kanpur is an institutional body constituted in accordance with the Sexual Harassment of Women at Workplace (Prevention, Prohibition, and Redressal) Act, 2013. We are dedicated to preventing sexual harassment and abuse, sensitizing the campus community towards gender equality and making IIT Kanpur a safer place.

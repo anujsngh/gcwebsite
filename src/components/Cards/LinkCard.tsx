@@ -19,7 +19,7 @@ const LinkCard: React.FC<LinkCardProps> = ({ link, icon, altText, title }) => {
 
         navigate(path);
 
-        // Scroll to top or to the hash element after navigation
+        // Scroll to hash element or top after navigation completes (loader is 500ms)
         setTimeout(() => {
             if (hash) {
                 const element = document.getElementById(hash);
@@ -29,7 +29,7 @@ const LinkCard: React.FC<LinkCardProps> = ({ link, icon, altText, title }) => {
             } else {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
-        }, 100);
+        }, 600);
     };
 
     return (

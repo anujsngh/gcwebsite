@@ -19,7 +19,7 @@ const HomeHero: React.FC = () => {
     const shouldReduceMotion = useReducedMotion();
 
     return (
-        <div className="w-full bg-base-100 py-20 lg:py-28 overflow-hidden relative">
+        <div className="w-full bg-base-100 overflow-hidden relative min-h-[calc(100dvh-var(--navbar-h,4rem))] flex items-center">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-40 pointer-events-none" style={{ backgroundImage: 'var(--grain-bg)', backgroundSize: '256px 256px', backgroundRepeat: 'repeat' }}></div>
 
@@ -40,7 +40,7 @@ const HomeHero: React.FC = () => {
                         Gender Cell, IIT Kanpur
                     </motion.span>
 
-                    <h1 className="text-5xl lg:text-7xl font-bold mb-8 font-heading text-base-content leading-tight">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-8 font-heading text-base-content leading-tight">
                         Advancing <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Gender Equality</span> Together
                     </h1>
 
@@ -49,10 +49,10 @@ const HomeHero: React.FC = () => {
                     </p>
 
                     <div className="flex flex-wrap gap-4">
-                        <a href="#about" className="btn btn-primary btn-lg px-8 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                        <a href="#about" className="btn btn-primary btn-md sm:btn-lg px-6 sm:px-8 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                             Learn More
                         </a>
-                        <a href="#events" className="btn btn-outline btn-primary btn-lg px-8 hover:bg-primary hover:text-white transition-all duration-300">
+                        <a href="#events" className="btn btn-outline btn-primary btn-md sm:btn-lg px-6 sm:px-8 hover:bg-primary hover:text-white transition-all duration-300">
                             Our Events
                         </a>
                     </div>

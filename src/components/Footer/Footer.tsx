@@ -25,10 +25,7 @@ export const Footer: React.FC = () => {
                     <div>
                         <h2 className="footer-title text-white opacity-100">Gender Cell, IIT KANPUR</h2>
                         <p className="mt-2">
-                            The Gender Cell at IIT Kanpur is dedicated to promoting gender equality, inclusivity, <br />
-                            and awareness within the campus community. The cell actively engages to prevent <br />
-                            sexual harassment, abuse and gender inequality across the campus, creating a safe <br />
-                            and respectful environment where all individuals can thrive.
+                            The Gender Cell at IIT Kanpur is dedicated to promoting gender equality, inclusivity, and awareness within the campus community. The cell actively engages to prevent sexual harassment, abuse and gender inequality across the campus, creating a safe and respectful environment where all individuals can thrive.
                         </p>
                     </div>
                 </aside>
