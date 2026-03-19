@@ -4,7 +4,6 @@ import Navbar from './components/Navbar/Navbar';
 import { Footer } from './components/Footer/Footer';
 import LinksSection from './components/Sections/LinksSection';
 import SkipLinks from './components/Accessibility/SkipLinks';
-import AccessibilityToolbar from './components/Accessibility/AccessibilityToolbar';
 import BackToTop from './components/Common/BackToTop';
 
 export const Layout = () => {
@@ -27,33 +26,32 @@ export const Layout = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-base-100 text-base-content grain-page">
-      {/* Skip links — must be the first focusable elements in the DOM */}
-      <SkipLinks />
+    <>
+      <div className="min-h-screen flex flex-col bg-base-100 text-base-content grain-page">
+        {/* Skip links — must be the first focusable elements in the DOM */}
+        <SkipLinks />
 
-      {/* Sticky navigation header */}
-      <div ref={navRef} id="site-navigation" className="sticky top-0 z-50 w-full">
-        <Navbar />
+        {/* Sticky navigation header */}
+        <div ref={navRef} id="site-navigation" className="sticky top-0 z-50 w-full">
+          <Navbar />
+        </div>
+
+        {/* Main content — tabIndex={-1} allows programmatic focus on route change */}
+        <main
+          id="main-content"
+          role="main"
+          tabIndex={-1}
+          className="flex-grow outline-none pb-8"
+        >
+          <Outlet />
+        </main>
+
+        {showLinksSection && <LinksSection />}
+        <Footer />
       </div>
 
-      {/* Main content — tabIndex={-1} allows programmatic focus on route change */}
-      <main
-        id="main-content"
-        role="main"
-        tabIndex={-1}
-        className="flex-grow outline-none pb-8"
-      >
-        <Outlet />
-      </main>
-
-      {showLinksSection && <LinksSection />}
-      <Footer />
-
-      {/* Back to top button — appears when scrolled down */}
+      {/* Fixed UI outside grain-page so CSS filter doesn't break position:fixed */}
       <BackToTop />
-
-      {/* Accessibility toolbar — fixed position, always visible */}
-      <AccessibilityToolbar />
-    </div>
+    </>
   );
 };

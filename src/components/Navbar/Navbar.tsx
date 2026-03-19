@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import logo from "../../assets/images/logo_gc_new.png";
 import logo_iitk from "../../assets/images/logo-iitk.png";
 import { useLocation, Link, useNavigate } from "react-router-dom";
+import AccessibilityToolbar from "../Accessibility/AccessibilityToolbar";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar: React.FC = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -170,8 +172,10 @@ const Navbar: React.FC = () => {
             {/* Spacer */}
             <div className="flex-1 hidden lg:block min-w-4" aria-hidden="true"></div>
 
-            {/* Right section: IITK Logo */}
-            <div className="flex-none">
+            {/* Right section: Accessibility + IITK Logo */}
+            <div className="flex-none flex items-center gap-1">
+                <ThemeToggle />
+                <AccessibilityToolbar />
                 <a href="https://www.iitk.ac.in/" target="_blank" rel="noopener noreferrer" className="btn btn-ghost btn-circle avatar" aria-label="Visit IIT Kanpur website (opens in new tab)">
                     <div className="w-10 rounded-full">
                         <img alt="IIT Kanpur Logo" src={logo_iitk} className="!object-contain w-full h-full" />
