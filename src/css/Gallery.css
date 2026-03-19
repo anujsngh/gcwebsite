@@ -8,9 +8,11 @@
   content: '';
   position: absolute;
   inset: 0;
-  opacity: 0.15;
-  background-image: radial-gradient(oklch(var(--p)) 0.5px, transparent 0.5px);
-  background-size: 1.5rem 1.5rem;
+  opacity: 0.3;
+  background-image: var(--grain-bg);
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  mix-blend-mode: multiply;
   pointer-events: none;
   z-index: 0;
 }

@@ -21,7 +21,7 @@ const HomeHero: React.FC = () => {
     return (
         <div className="w-full bg-base-100 py-20 lg:py-28 overflow-hidden relative">
             {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-30 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#4F46E5 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
+            <div className="absolute inset-0 opacity-40 pointer-events-none" style={{ backgroundImage: 'var(--grain-bg)', backgroundSize: '256px 256px', backgroundRepeat: 'repeat' }}></div>
 
             <section className="container mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 items-center gap-8 relative z-10">
 
@@ -58,7 +58,7 @@ const HomeHero: React.FC = () => {
                     </div>
 
                     <motion.div
-                        className="mt-10 p-6 bg-base-200/80 backdrop-blur-sm rounded-xl border border-base-300/50 shadow-sm"
+                        className="mt-10 p-6 bg-base-200 rounded-xl border border-base-300/50 shadow-sm grain-surface"
                         initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
                         animate={shouldReduceMotion ? {} : { opacity: 1, y: 0 }}
                         transition={shouldReduceMotion ? {} : { delay: 0.4, duration: 0.6 }}
@@ -94,8 +94,8 @@ const HomeHero: React.FC = () => {
                         ))}
                     </div>
                     {/* Decorative Elements */}
-                    <div className="absolute -top-10 -right-10 w-32 h-32 bg-secondary/20 rounded-full blur-3xl"></div>
-                    <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl"></div>
+                    <div className="absolute -top-10 -right-10 w-32 h-32 bg-secondary/10 rounded-full blur-3xl"></div>
+                    <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
                 </div>
             </section>
         </div>

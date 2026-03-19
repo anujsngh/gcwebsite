@@ -10,8 +10,8 @@ export const theme = {
     colors: {
       primary: "#4F46E5", // Slate Blue
       secondary: "#14B8A6", // Teal
-      neutral: "#64748B", // Slate Gray
-      background: "#F8FAFC", // Off-White
+      neutral: "#586577", // Slate Gray (darkened for matte desaturation contrast safety)
+      background: "#F5F3EE", // Warm matte off-white
       accent: "#F59E0B", // Soft Gold
       subheading: "#64748B",
       links: "#4F46E5",

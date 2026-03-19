@@ -12,7 +12,7 @@ export const Layout = () => {
   const showLinksSection = !location.pathname.startsWith('/blogs/');
 
   return (
-    <div className="min-h-screen flex flex-col bg-base-100 text-base-content">
+    <div className="min-h-screen flex flex-col bg-base-100 text-base-content grain-page">
       {/* Skip links — must be the first focusable elements in the DOM */}
       <SkipLinks />
 

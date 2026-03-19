@@ -13,7 +13,7 @@ interface BannerCardProps {
 
 const BannerCard: React.FC<BannerCardProps> = ({ title, description, buttons }) => {
     return (
-        <div className="text-center py-10 px-4 bg-base-100">
+        <div className="text-center py-10 px-4 bg-base-100 grain-surface">
             <h1 className="text-4xl font-bold mb-4">{title}</h1>
             <p className="max-w-3xl mx-auto mb-8 text-lg opacity-80">{description}</p>
             <div className="flex justify-center gap-4">

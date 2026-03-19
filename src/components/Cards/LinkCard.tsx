@@ -33,7 +33,7 @@ const LinkCard: React.FC<LinkCardProps> = ({ link, icon, altText, title }) => {
     };
 
     return (
-        <div className="card bg-base-100 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-base-200 hover:border-secondary w-full max-w-xs mx-auto group">
+        <div className="card bg-base-100 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-base-200 hover:border-secondary w-full max-w-xs mx-auto group grain-surface">
             <Link to={link} onClick={handleClick} className="flex flex-col items-center justify-center p-6 text-center h-full">
                 <div className="w-16 h-16 mb-4 group-hover:scale-110 transition-transform duration-300">
                     <img src={icon} alt={altText} className="w-full h-full object-contain" />

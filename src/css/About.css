@@ -31,7 +31,7 @@
 }
 
 .about-us-card {
-  background-color:#f6f6ff;
+  background-color:#f0ede6;
   border-radius: 10px;
   padding: 20px;
   margin: 10px 10px;
@@ -74,7 +74,7 @@
   border-radius: 8px;
   margin: 20px auto auto auto;
   width: 97%;
-  background: linear-gradient(to right, rgb(205, 229, 241), rgb(143, 177, 233), rgb(205, 229, 241));
+  background: #e4dfd6;
 }
 
 .team-info h2 {
@@ -112,7 +112,7 @@
 .card {
   width: 200px;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #f0ede6;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -182,7 +182,7 @@
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
   width: 99%;
   margin: auto;
-  background-color: rgb(205, 229, 241);
+  background-color: #e4dfd6;
 }
 .history-container h2 {
   font-size: 30px;

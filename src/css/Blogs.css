@@ -1,11 +1,11 @@
 .blogs-container {
   min-height: 100vh;
-  background-color: #f8fafc;
+  background-color: #f5f3ee;
 }
 
 /* Hero Section */
 .blogs-hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #4a41c9;
   color: white;
   padding: 80px 20px;
   text-align: center;
@@ -42,7 +42,7 @@
 }
 
 .blog-card {
-  background: white;
+  background: #faf8f4;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -116,7 +116,7 @@
 }
 
 .read-more-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #4a41c9;
   color: white;
   border: none;
   padding: 8px 16px;

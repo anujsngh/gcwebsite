@@ -84,6 +84,94 @@
   }
 }
 
+/* ==========================================================================
+   AESTHETIC — Grain / Noise Texture
+   Uses an inline SVG feTurbulence filter as a CSS background.
+   Disabled in high-contrast / yellow-black themes for max readability.
+   ========================================================================== */
+:root {
+  --grain-bg: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  --grain-opacity: 0.45;
+  --grain-card-opacity: 0.3;
+}
+
+/* Global page grain overlay */
+.grain-page {
+  position: relative;
+  filter: saturate(0.85);
+}
+
+.grain-page::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: var(--grain-bg);
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  opacity: var(--grain-opacity);
+  mix-blend-mode: multiply;
+}
+
+/* Card-level grain surface */
+.grain-surface {
+  position: relative;
+  overflow: hidden;
+}
+
+.grain-surface::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: var(--grain-bg);
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  opacity: var(--grain-card-opacity);
+  mix-blend-mode: multiply;
+  border-radius: inherit;
+}
+
+/* Ensure card content sits above grain overlay */
+.grain-surface > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Soft matte shadows for grain surfaces */
+.grain-surface {
+  box-shadow: 0 2px 8px -2px rgba(79, 70, 229, 0.08),
+              0 4px 16px -4px rgba(0, 0, 0, 0.06) !important;
+}
+
+.grain-surface:hover {
+  box-shadow: 0 4px 12px -2px rgba(79, 70, 229, 0.12),
+              0 8px 24px -4px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Dark theme: switch blend mode so grain is visible on dark backgrounds */
+[data-theme="dark"] .grain-page::after,
+[data-theme="dark"] .grain-surface::after {
+  mix-blend-mode: soft-light;
+  opacity: 0.35;
+}
+
+/* Restore full saturation for accessibility themes */
+[data-theme="high-contrast"] .grain-page,
+[data-theme="yellow-black"] .grain-page {
+  filter: saturate(1);
+}
+
+/* Disable grain completely in accessibility themes */
+[data-theme="high-contrast"] .grain-page::after,
+[data-theme="high-contrast"] .grain-surface::after,
+[data-theme="yellow-black"] .grain-page::after,
+[data-theme="yellow-black"] .grain-surface::after {
+  display: none !important;
+}
+
 /* Override DaisyUI menu link default states */
 .menu li > * {
   @apply transition-colors;
