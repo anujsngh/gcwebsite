@@ -17,6 +17,20 @@
   <meta property="og:description" content="Providing support and resources for gender equity at IIT Kanpur." />
   <title>Gender Cell IITK</title>
 
+  <!-- Preconnect to critical third-party origins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://firestore.googleapis.com" />
+
+  <!-- Non-blocking font loading (replaces render-blocking @import in CSS) -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&family=Lexend:wght@100..900&display=swap"
+    media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&family=Lexend:wght@100..900&display=swap" />
+  </noscript>
+
   <!--
     Accessibility: Apply stored preferences synchronously before CSS loads to
     prevent a flash of wrong theme/font-size on page load.
@@ -60,7 +74,46 @@
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <!--
+      Inline fallback: visible while JS loads, replaced by React.
+      On 2G or if JS fails entirely, this ensures emergency contacts
+      are always accessible as bare HTML.
+    -->
+    <div id="html-fallback" style="font-family:system-ui,sans-serif;max-width:640px;margin:0 auto;padding:1.5rem;">
+      <h1 style="font-size:1.5rem;margin-bottom:0.5rem;">Gender Cell, IIT Kanpur</h1>
+      <p style="margin-bottom:1rem;">If this page does not load fully, use the emergency contacts below.</p>
+
+      <div style="background:#fee2e2;border:1px solid #dc2626;border-radius:8px;padding:1rem;margin-bottom:1rem;">
+        <strong style="color:#dc2626;">Emergency Contacts</strong><br />
+        Security (SIS) Control Room:<br />
+        <a href="tel:+915122597999" style="color:#2563eb;">+91-512-259-7999</a>,
+        <a href="tel:+915126797999" style="color:#2563eb;">+91-512-679-7999</a>
+      </div>
+
+      <div style="background:#f3f4f6;border-radius:8px;padding:1rem;margin-bottom:1rem;">
+        <strong>ICC (Internal Complaints Committee)</strong><br />
+        Email: <a href="mailto:icc@iitk.ac.in" style="color:#2563eb;">icc@iitk.ac.in</a><br />
+        Chairperson ICC — Prof. Devlina Chatterjee:
+        <a href="mailto:devlina@iitk.ac.in" style="color:#2563eb;">devlina@iitk.ac.in</a>,
+        <a href="tel:+915122596960" style="color:#2563eb;">512-259-6960</a>
+      </div>
+
+      <div style="background:#f3f4f6;border-radius:8px;padding:1rem;margin-bottom:1rem;">
+        <strong>Gender Cell</strong><br />
+        Chairperson — Prof. Priyanka V Bagade:
+        <a href="mailto:pbagade@iitk.ac.in" style="color:#2563eb;">pbagade@iitk.ac.in</a>,
+        <a href="tel:+915122592206" style="color:#2563eb;">+91-512-259-2206</a><br />
+        Counsellor — Ms. Rita Shukla:
+        <a href="mailto:rita@iitk.ac.in" style="color:#2563eb;">rita@iitk.ac.in</a>,
+        <a href="tel:+915122597165" style="color:#2563eb;">512-259-7165</a>
+      </div>
+
+      <noscript>
+        <p><strong>JavaScript is required to view the full website.</strong> The essential contacts are shown above.</p>
+      </noscript>
+    </div>
+  </div>
   <script type="module" src="/src/main.tsx"></script>
 </body>
 

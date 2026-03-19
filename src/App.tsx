@@ -1,18 +1,22 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import { HashRouter, Route, Routes, useLocation } from 'react-router-dom';
 import { Layout as AppLayout } from './AppLayout.tsx';
 import { Home } from './pages/Home.tsx';
-import Resources from './pages/Resources.tsx';
-import About from './pages/About.tsx';
 import Loader from './components/Loader.tsx';
-import Support from './pages/Support.tsx';
-import EventsPage from './pages/Events.tsx';
-import SurveysResult from './pages/SurveysResult.tsx';
-import ICC from './pages/ICC.tsx';
-import Blogs from './pages/Blogs.tsx';
-import BlogPost from './pages/BlogPost.tsx';
-import Competitions from './pages/Competitions.tsx';
 import LiveAnnouncer from './components/Accessibility/LiveAnnouncer.tsx';
+
+// Lazy-load non-home pages so the initial bundle stays small.
+// Home, AppLayout, Navbar, and Footer are eagerly loaded — they are
+// needed on every visit and contain the critical emergency contacts.
+const About = lazy(() => import('./pages/About.tsx'));
+const Resources = lazy(() => import('./pages/Resources.tsx'));
+const Support = lazy(() => import('./pages/Support.tsx'));
+const EventsPage = lazy(() => import('./pages/Events.tsx'));
+const Blogs = lazy(() => import('./pages/Blogs.tsx'));
+const BlogPost = lazy(() => import('./pages/BlogPost.tsx'));
+const SurveysResult = lazy(() => import('./pages/SurveysResult.tsx'));
+const Competitions = lazy(() => import('./pages/Competitions.tsx'));
+const ICC = lazy(() => import('./pages/ICC.tsx'));
 
 const PAGE_NAMES: Record<string, string> = {
   '/': 'Home page',
@@ -27,14 +31,25 @@ const PAGE_NAMES: Record<string, string> = {
 };
 
 const App = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [announcement, setAnnouncement] = useState('');
   const location = useLocation();
   const prevPathRef = useRef(location.pathname);
+  const isInitialMount = useRef(true);
 
   useEffect(() => {
+    // Skip the artificial loader on initial page load — let React render
+    // immediately so content is visible as fast as possible.
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+
     const isPathChange = prevPathRef.current !== location.pathname;
     prevPathRef.current = location.pathname;
+
+    // Only show loader on actual page-to-page navigation
+    if (!isPathChange) return;
 
     setLoading(true);
     setTimeout(() => {
@@ -53,9 +68,8 @@ const App = () => {
         main.focus({ preventScroll: true });
       }
 
-      // Only scroll to top on actual navigation between pages (not on refresh).
-      // Hash scrolling is handled by LinkCard/HomeCard after navigation.
-      if (isPathChange && !location.hash) {
+      // Scroll to top unless navigating to a hash target
+      if (!location.hash) {
         window.scrollTo(0, 0);
       }
     }, 500);
@@ -67,21 +81,22 @@ const App = () => {
       <LiveAnnouncer message={announcement} />
 
       {loading && <Loader />}
-      <Routes>
-        <Route path="/" element={<AppLayout />}>
-          <Route index element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/resources" element={<Resources />} />
-          <Route path='/support' element={<Support />} />
-          <Route path='/events' element={<EventsPage />} />
-          <Route path='/blogs' element={<Blogs />} />
-          <Route path='/blogs/:id' element={<BlogPost />} />
-          {/* <Route path="/contact" element={<ContactUs />} /> */}
-          <Route path='/surveys' element={<SurveysResult />} />
-          <Route path='/competitions' element={<Competitions />} />
-          <Route path='/icc' element={<ICC />} />
-        </Route>
-      </Routes>
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="/" element={<AppLayout />}>
+            <Route index element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/resources" element={<Resources />} />
+            <Route path='/support' element={<Support />} />
+            <Route path='/events' element={<EventsPage />} />
+            <Route path='/blogs' element={<Blogs />} />
+            <Route path='/blogs/:id' element={<BlogPost />} />
+            <Route path='/surveys' element={<SurveysResult />} />
+            <Route path='/competitions' element={<Competitions />} />
+            <Route path='/icc' element={<ICC />} />
+          </Route>
+        </Routes>
+      </Suspense>
     </>
   );
 };

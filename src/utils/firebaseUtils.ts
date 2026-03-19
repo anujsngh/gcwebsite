@@ -20,8 +20,6 @@ export const getContentByFolder = async (folderName: string): Promise<any[]> => 
       ...doc.data()
     }));
 
-    console.log(contentList);
-
     return contentList;
   } catch (error) {
     console.error(`Error fetching content for type '${folderName}':`, error);
